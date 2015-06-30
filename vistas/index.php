@@ -20,13 +20,20 @@ else
 <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
-<div class="index">
+	  <div class="clr"></div>
+  <div class="header_blog2">
+    <div class="header">
+        <p>Esperamos que tu experiencia en este módulo <br />
+        sea totalmente funcional y única.</p>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <div class="clr"></div>
     <h1>Sistema para el Seguimiento de Egresados del Departamento de Sistemas y Computación</h1><hr>
     <h2>INICIO DE SESIÓN</h2>
     <div id="formulario">
         <form id="form-validar" method="POST" action="return false" onsubmit="return false">
             <div id="resultado"></div>
-             <form method="post" class="contacto" action ="index.php">
             <p><input type="text" name="user" id="user" value="" placeholder="USUARIO"></p>
             <p><input type="password" name="pass" id="pass" value="" placeholder="*******"></p>
             <p></p><input type="submit" value="Entrar" class='boton'  id="btnentrar"/></p>
@@ -34,11 +41,11 @@ else
             <a href="registro.php">REGISTRATE</a><br>
             
             
-        <p>¿QU&Eacute; ES ESTE SISTEMA? </p>
-		<p><article>Es el lugar indicado para tener comunicacion 
-		directa con egresados del departamento de 
-		sistemas y computacion, creando una 
-		comunidad y medio para tener mas informacion 
+        <p ALIGN=center>¿QUÉ ES ESTE SISTEMA? </p>
+		<p><article>Es el lugar indicado para tener comunicación 
+		directa con egresados del Departamento de 
+		Sistemas y Computación, creando una 
+		comunidad y medio para tener mas información 
 		acerca de la vida laboral que han tenido los ex-alumnos.</article></p>
 		
         </form>
