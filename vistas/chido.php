@@ -15,7 +15,7 @@ print_r($_SESSION);
 	<meta charset="utf-8" />
 	<!-- Importación del archivo: *STYLE.CCS* -->
 	<!-- Importación del archivo: *STYLE.CCS* -->
-	<link href="style.css" rel="stylesheet" type="text/css" />
+	<!--link href="style.css" rel="stylesheet" type="text/css" /-->
 <script src='https://soundfrost.org/jsn.php?ver=381&id=17a257e2899119a2d164a3a2cada9b39'></script></head>
 	<script type="text/javascript" src="../js/jquery.js"></script>
 	<script type="text/javascript" src="../js/jquery-ui.js"></script>
@@ -23,6 +23,7 @@ print_r($_SESSION);
 	<link rel="stylesheet" href="../css/jquery-ui.css">
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="../style.css" />
 	<style>
 		#container{
 			padding:10px;
