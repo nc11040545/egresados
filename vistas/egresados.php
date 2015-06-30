@@ -144,12 +144,16 @@ font-style: oblique;
 						<p><input class="datos" type="text" id="Estado" name="Estado" placeholder="Estado donde resides actualmente" value="<?= $_SESSION["estado"] ?>"  class="form-control"></p>
 					</div>
 					<div class="form-container">
-				<label for="Carrera">Selecciona tu Carrera</label><br>
-				<input type="radio" name="Carrera" value="Ing. Informática" value= >Ing. Informática<br> 
-				<input type="radio" name="Carrera" value="Ing. en Sistemas Computacionales " value="<?= $_SESSION["carrera"] ?>" >Ing. en Sistemas Computacionales <br>
-				<input type="radio" name="Carrera" value="Ing. en Tecnologias de la Información y la Comunicación" value="<?= $_SESSION["carrera"] ?>" >Ing. en Tecnologias de la Información y la Comunicación<br>
-				<input type="radio" name="Carrera" value="Lic. en Informática" value="<?= $_SESSION["carrera"] ?>" >Lic. en Informática<br>
-				    </div>
+						<label for="Carrera">Selecciona tu carrera</label>
+						<br><label for="informatica">Ing.Informática</label>
+					    <p><input class="datos" type="radio" id="informatica" name="Carrera" value="informatica" <?php echo (($_SESSION["carrera"] == "informatica") ? "checked": "")?> class="form-control"></p>
+						<label for="sistemas">Ing. en Sistemas Computacionales</label>
+						<br><input class="datos" type="radio" id="sistemas" name="Carrera" value="sistemas" <?php echo (($_SESSION["carrera"] == "sistemas") ? "checked": "")?>  class="form-control">
+						<label for="tics">Ing. en Tecnologías de la Información y la Comunicación</label>
+						<br><input class="datos" type="radio" id="tics" name="Carrera" value="tics" <?php echo (($_SESSION["carrera"] == "tics") ? "checked": "")?>  class="form-control">
+						<label for="LInformatica">Licenciatura en Informática</label>
+						<br><input class="datos" type="radio" id="LInformatica" name="Carrera" value="LInformatica" <?php echo (($_SESSION["carrera"] == "LInformatica") ? "checked": "")?>  class="form-control">
+					</div>
 					<div class="form-container">
 						<label for="Generacion">Generación</label>
 						<p><input class="datos" type="text" id="Generacion" name="Generacion" placeholder="Año de egreso" value="<?= $_SESSION["generacion"] ?>"  class="form-control">
