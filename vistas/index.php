@@ -10,6 +10,7 @@ else
 <!DOCTYPE html>
 <html lang="es">
 <head>
+	
 <meta charset="UTF-8">
 <title>INICIO DE SESIÓN</title>
 <script type="text/javascript" src="../js/jquery.js"></script>
@@ -25,9 +26,10 @@ else
     <div id="formulario">
         <form id="form-validar" method="POST" action="return false" onsubmit="return false">
             <div id="resultado"></div>
+             <form method="post" class="contacto" action ="index.php">
             <p><input type="text" name="user" id="user" value="" placeholder="USUARIO"></p>
             <p><input type="password" name="pass" id="pass" value="" placeholder="*******"></p>
-            <p></p><input type="submit" value="Entrar"  id="btnentrar"/></p>
+            <p></p><input type="submit" value="Entrar" class='boton'  id="btnentrar"/></p>
             
             <a href="registro.php">REGISTRATE</a><br>
             
