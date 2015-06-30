@@ -230,11 +230,11 @@ font-style: oblique;
 			<div class="form-container">
 						<label for="apoyo">¿Con cuál de estas opciones nos puedes apoyar? </label>
 						<br><label for="servicio">Servicio Social</label>
-					    <br><input class="experiencia" type="checkbox" id="servicio" name="apoyo" value="servicio" <?php echo (($_SESSION["apoyo"] == "servicio") ? "checked": "")?> class="form-control">
+					    <br><input class="experiencia" type="checkbox" id="servicio" name="apoyo" value="servicio" <?php echo (($_SESSION["apoyo"] == "si") ? "checked": "")?> class="form-control">
 						<br><label for="residentes">Residentes</label>
-						<br><input class="experiencia" type="checkbox" id="residentes" name="apoyo" value="residentes <?php echo (($_SESSION["apoyo"] == "residentes") ? "checked": "")?>" class="form-control">
+						<br><input class="experiencia" type="checkbox" id="residentes" name="apoyo" value="residentes <?php echo (($_SESSION["apoyo"] == "si") ? "checked": "")?>" class="form-control">
 						<br></be><label for="bolsa">Bolsa de Trabajo</label>
-						<br><input class="experiencia" type="checkbox" id="bolsa" name="apoyo" value="bolsa" <?php echo (($_SESSION["apoyo"] == "bolsa") ? "checked": "")?> class="form-control">
+						<br><input class="experiencia" type="checkbox" id="bolsa" name="apoyo" value="bolsa" <?php echo (($_SESSION["apoyo"] == "si") ? "checked": "")?> class="form-control">
 					</div>
 				<input class="boton" type="submit" id="GuardarInformacion2" value="Guardar información" class="form-control btn btn-primary">
 			</div>
