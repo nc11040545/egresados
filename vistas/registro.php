@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>REGISTRO</title>
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="../style.css" />
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 </head>
 <body>
