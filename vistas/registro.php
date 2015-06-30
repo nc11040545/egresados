@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+	
 <meta charset="UTF-8">
 <title>REGISTRO</title>
 <link rel="Shortcut Icon" type="image/x-icon" href="../images/cube.ico" />
@@ -10,6 +11,7 @@
 <body>
 	<form id="form-insertar" method="post" action="">
            <div class="contacto">
+			   <img src="../images/logo.gif" width="338" aling="left" height="70" border="0" alt="logo">
                <h1>Sistema para el Seguimiento de Egresados del Departamento de Sistemas y Computación</h1><hr>
                <h2>REGISTRATE</h2>
 			   <label>Nombre:</label>

@@ -128,7 +128,7 @@ font-family: Code;
 .contacto div{
 	margin-bottom: 15px;
 }
-.contacto input[type='text'], input[type='password'], .contacto textarea{
+.contacto input[type='text'], input[type='password'], input[type='email'],  .contacto textarea{
 	padding: 7px 6px;
 	width: 294px;
 	border: 1px solid #CED5D7;
@@ -136,7 +136,7 @@ font-family: Code;
 	box-shadow:0 0 0 3px #EEF5F7;
 	margin: 5px 0;
 }
-.contacto input[type='text']:focus, input[type='password']:focus,.contacto textarea:focus{
+.contacto input[type='text']:focus, input[type='password']:focus, input[type='email']:focus, .contacto textarea:focus{
 	outline: none;
 	box-shadow:0 0 0 3px #dde9ec;
 }
