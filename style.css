@@ -14,7 +14,7 @@ html { padding:0; margin:0;}
 .header_blog h2 { font: normal 18px Arial, Helvetica, sans-serif; color:#1d1d1d; padding:10px 0 0 0; margin:0;}
 .header_blog p { font: normal 11px Arial, Helvetica, sans-serif; color:#fff; padding:0 0 30px 0; margin:0;}
 /* logo */
-.logo {padding:0; margin:0; width:148px; float:left;}
+.logo {padding:0; margin:0; width:200px; float:left;}
 /*menu*/								/* Modificaci?n para espacio en los botones deL men? */
 .menu { padding:13px 0 0 0; margin:0 ; width:610px;  float:right; }
 .menu ul { text-align: right;  padding:0; margin:0; list-style:none; border:0; float:right;}

@@ -2,7 +2,7 @@
 session_start();
 if (isset($_SESSION['usuario']))
 {
-    echo '<script>location.href = "chido.php";</script>'; 
+    echo '<script>location.href = "egresados.php";</script>'; 
 }
 else
 {
@@ -10,7 +10,7 @@ else
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	
+<link rel="Shortcut Icon" type="image/x-icon" href="../images/cube.ico" />	
 <meta charset="UTF-8">
 <title>INICIO DE SESIÓN</title>
 <script type="text/javascript" src="../js/jquery.js"></script>
@@ -23,15 +23,17 @@ else
 	  <div class="clr"></div>
   <div class="header_blog2">
     <div class="header">
+		<img src="../images/logo.gif" width="338" aling="left" height="70" border="0" alt="logo">
         <p>Esperamos que tu experiencia en este módulo <br />
         sea totalmente funcional y única.</p>
     </div>
     <div class="clr"></div>
   </div>
   <div class="clr"></div>
-    <h1>Sistema para el Seguimiento de Egresados del Departamento de Sistemas y Computación</h1><hr>
+    <h1 ALIGN=center>Sistema para el Seguimiento de Egresados del Departamento de Sistemas y Computación</h1><hr>
     <h2>INICIO DE SESIÓN</h2>
-    <div id="formulario">
+    <div id="formulario" class="contacto">
+		
         <form id="form-validar" method="POST" action="return false" onsubmit="return false">
             <div id="resultado"></div>
             <p><input type="text" name="user" id="user" value="" placeholder="USUARIO"></p>
@@ -42,11 +44,11 @@ else
             
             
         <p ALIGN=center>¿QUÉ ES ESTE SISTEMA? </p>
-		<p><article>Es el lugar indicado para tener comunicación 
+		<p ALIGN=center>Es el lugar indicado para tener comunicación 
 		directa con egresados del Departamento de 
 		Sistemas y Computación, creando una 
 		comunidad y medio para tener mas información 
-		acerca de la vida laboral que han tenido los ex-alumnos.</article></p>
+		acerca de la vida laboral que han tenido los ex-alumnos.</p>
 		
         </form>
        <script>
@@ -58,7 +60,7 @@ else
 					if (respuesta.indexOf("si")>=0)
 					
 					{
-						location.href="chido.php";
+						location.href="egresados.php";
 						}
 						else {alert(respuesta);}
 				});

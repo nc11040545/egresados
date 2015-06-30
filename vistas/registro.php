@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <title>REGISTRO</title>
+<link rel="Shortcut Icon" type="image/x-icon" href="../images/cube.ico" />
 <link rel="stylesheet" href="../style.css" />
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 </head>
 <body>
 	<form id="form-insertar" method="post" action="">
-           <div>
+           <div class="contacto">
                <h1>Sistema para el Seguimiento de Egresados del Departamento de Sistemas y Computación</h1><hr>
                <h2>REGISTRATE</h2>
 			   <label>Nombre:</label>
@@ -19,7 +20,7 @@
 			   <input type="password" name="cpassword" required><br>
 			   <label>Correo:</label>
 			   <input type="email" name="correo" required><br>
-			   <input type="submit" value="Registrar"  id="btnregistrar"/>
+			  <br> <input type="submit" value="Registrar"  id="btnregistrar"/>
           </div> 
     </form> 
    
