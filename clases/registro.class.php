@@ -108,7 +108,9 @@ class registro{
 								$_SESSION["conocimiento"] = $r2["conocimiento"];
 								$_SESSION["cursos"] = $r2["cursos"];
 								$_SESSION["conferencias"] = $r2["conferencias"];
-								$_SESSION["apoyo"] = $r2["apoyo"];
+								$_SESSION["apoyoServicio"] = $r2["apoyoServicio"];
+								$_SESSION["apoyoResidentes"] = $r2["apoyoResidentes"];
+								$_SESSION["apoyoBolsa"] = $r2["apoyoBolsa"];
 								
 								
 							}

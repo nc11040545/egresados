@@ -11,7 +11,9 @@ class Experiencia_Laboral{
 	private $conocimiento;
 	private $cursos;
 	private $conferencias;
-	private $apoyo;
+	private $apoyoServicio;
+	private $apoyoResidentes;
+	private $apoyoBolsa;
 	private $status=true;
 
 	public function getid(){return $this->id;}
@@ -24,7 +26,9 @@ class Experiencia_Laboral{
 	public function getconocimiento(){return $this->conocimiento;}
 	public function getcursos(){return $this->cursos;}
 	public function getconferencias(){return $this->conferencias;}
-	public function getapoyo(){return $this->apoyo;}
+	public function getapoyoServicio(){return $this->apoyoServicio;}
+	public function getapoyoResidentes(){return $this->apoyoResidentes;}
+	public function getapoyoBolsa(){return $this->apoyoBolsa;}
 	public function getstatus(){return $this->status;}
 	public function setid($id){$this->id = $id;}
 	public function settiempo($tiempo){$this->tiempo = $tiempo;}
@@ -36,29 +40,37 @@ class Experiencia_Laboral{
 	public function setconocimiento($conocimiento){$this->conocimiento = $conocimiento;}
 	public function setcursos($cursos){$this->cursos = $cursos;}
 	public function setconferencias($conferencias){$this->conferencias = $conferencias;}
-	public function setapoyo($apoyo){$this->apoyo = $apoyo;}
+	public function setapoyoServicio($apoyoServicio){$this->apoyoServicio = $apoyoServicio;}
+	public function setapoyoResidentes($apoyoResidentes){$this->apoyoResidentes = $apoyoResidentes;}
+	public function setapoyoBolsa($apoyoBolsa){$this->apoyoBolsa = $apoyoBolsa;}
 	public function setstatus($status){$this->status = $status;}
 
-    public function insertarExperiencia_Laboral($id, $tiempo, $trabajando, $ejerciendo, $formal, $negocio, $telOficina, $conocimiento, $cursos, $conferencias, $apoyo){
+    public function insertarExperiencia_Laboral($id, $tiempo, $trabajando, $ejerciendo, $formal, $negocio, $telOficina, $conocimiento, $cursos, $conferencias, $apoyoServicio, $apoyoResidentes, $apoyoBolsa){
 	    $conexion = new Conexion();
-	    $sql = "insert into experiencia_laboral(id, tiempo, trabajando, ejerciendo, formal, negocio, telOficina, conocimiento, cursos, conferencias, apoyo) 
-		values('$tiempo', '$trabajando', '$ejerciendo', '$sector', '$formal', '$negocios', '$telOficina', '$conocimiento', '$cursos', '$conferencias', '$apoyo')";
+	    $sql = "insert into experiencia_laboral(id, tiempo, trabajando, ejerciendo, formal, negocio, telOficina, conocimiento, cursos, conferencias, apoyoServicio, apoyoResidentes, apoyoBolsa) 
+		values('$tiempo', '$trabajando', '$ejerciendo', '$sector', '$formal', '$negocios', '$telOficina', '$conocimiento', '$cursos', '$conferencias', '$apoyoServicio','$apoyoResidentes'$apoyoBolsa)";
 		mysqli_query($conexion->link, $sql) or die("Error: ".mysqli_error($conexion->link));
-		echo "Experiencia laboral insertada correctamente";
+		
 	}
 	
-	public function altaExperiencia_Laboral($id, $tiempo, $trabajando, $ejerciendo, $formal, $negocio, $telOficina, $conocimiento, $cursos, $conferencias, $apoyo){
+	public function altaExperiencia_Laboral($id, $tiempo, $trabajando, $ejerciendo, $formal, $negocio, $telOficina, $conocimiento, $cursos, $conferencias, $apoyoServicio, $apoyoResidentes, $apoyoBolsa){
 		$conexion = new Conexion();
-		$sql = "insert into experiencia_laboral(id, tiempo, trabajando, ejerciendo, formal, negocio, telOficina, conocimiento, cursos, conferencias, apoyo) 
-		values('$id','$tiempo', '$trabajando', '$ejerciendo', '$formal', '$negocio', '$telOficina', '$conocimiento', '$cursos', '$conferencias', '$apoyo')";
+		$sql = "insert ignore into experiencia_laboral(id, tiempo, trabajando, ejerciendo, formal, negocio, telOficina, conocimiento, cursos, conferencias, apoyoServicio, apoyoResidentes, apoyoBolsa) 
+		values('$id','$tiempo', '$trabajando', '$ejerciendo', '$formal', '$negocio', '$telOficina', '$conocimiento', '$cursos', '$conferencias', '$apoyoServicio','$apoyoResidentes', '$apoyoBolsa')";
 		mysqli_query($conexion->link, $sql) or die("Error: ".mysqli_error($conexion->link));
-		echo "Experiencia laboral insertada correctamente";
+		if (mysqli_affected_rows($conexion->link) > 0){
+			return "Experiencia laboral insertada correctamente";
+		}else{
+				return " no ";
+			}
 	}
 	
-	public function actualizaExperiencia_Laboral($id, $tiempo, $trabajando, $ejerciendo, $formal, $negocio, $telOficina, $conocimiento, $cursos, $conferencias, $apoyo){
+	public function actualizaExperiencia_Laboral(){
 		$conexion = new Conexion();
-		$sql = "update experiencia_laboral set tiempo='$this->tiempo', trabajando='$this->trabajando', ejerciendo='$this->ejerciendo', 
-		 formal='$this->formal', negocio='$this->negocio', telOficina='$this->telOficina', conocimiento='$this->conocimiento', cursos='$this->cursos', conferencias='$this->conferencias', apoyo='$this->apoyo''where id=$this->id";
+		echo $sql = "update experiencia_laboral set tiempo='$this->tiempo', trabajando='$this->trabajando', ejerciendo='$this->ejerciendo', 
+		 formal='$this->formal', negocio='$this->negocio', telOficina='$this->telOficina', conocimiento='$this->conocimiento', 
+		 cursos='$this->cursos', conferencias='$this->conferencias', apoyoServicio='$this->apoyoServicio',
+		 apoyoResidentes='$this->apoyoResidentes', apoyoBolsa='$this->apoyoBolsa' where id=$this->id";
 		mysqli_query($conexion->link, $sql) or die("Error: ".mysqli_error($conexion->link));
 		echo "Experiencia laboral actualizada correctamente";
 	}

@@ -26,7 +26,7 @@ if(!isset($_SESSION["idregistro"])){
 	<style>
 		#container{
 			padding:10px;
-			width:150%;
+			width:100%;
 			height:635px;
 			}
 			
@@ -83,7 +83,7 @@ font-style: oblique;
   <div class="header_blog2">
     <div class="header">
       <h2 id="tituloInvestigacion" align="center">Sistema para el Seguimiento de Egresados del Departamento de Sistemas y Computación</h2>
-      <center><p>Ing. Sergio Váldez Hernández <br />
+      <center><p>Ing en Sistemas Computacionales <br>Aníbal Roberto Saucedo Rosales <br />
          <strong>RESPONSABLE</strong></p></center>
     </div>
     <div class="clr"></div>
@@ -168,7 +168,7 @@ font-style: oblique;
 					</div>
 					<div class="form-container">
 						<label for="Compartir">¿Deseas Compartir tus datos con compañeros de tu generación?</label>
-						<p><input class="datos" type="checkbox" id="Compartir" name="Compartir" placeholder="Compartir" value="<?= $_SESSION["compartir"] ?>"  class="form-control"></p>
+						<p><input class="datos" type="checkbox" id="Compartir" name="Compartir" placeholder="Compartir" value="si" <?php echo (($_SESSION["compartir"] == "SI") ? "checked": "")?> class="form-control"></p>
 						<label for="compartir">Compartir</label>
 					</div>
 					<div class="form-container">
@@ -202,7 +202,7 @@ font-style: oblique;
 			<div class="form-container">
 				<label for="formal">¿Trabajas de manera formal o informal?</label>
 				<br><label for="Formal">Formal</label>
-						<input class="experiencia" type="radio" id="formal" name="formal" value="formal" <?php echo (($_SESSION["formal"] == "formal") ? "checked": "")?>class="form-control">
+						<input class="experiencia" type="radio" id="formal" name="formal" value="formal" <?php echo (($_SESSION["formal"] == "formal") ? "checked": "")?> class="form-control">
 						<br><label for="Informal">Informal</label>
 						<input class="experiecia" type="radio" id="informal" name="formal" value="informal" <?php echo (($_SESSION["formal"] == "informal") ? "checked": "")?> class="form-control">
 			</div>
@@ -235,11 +235,11 @@ font-style: oblique;
 			<div class="form-container">
 						<label for="apoyo">¿Con cuál de estas opciones nos puedes apoyar? </label>
 						<br><label for="servicio">Servicio Social</label>
-					    <br><input class="experiencia" type="checkbox" id="servicio" name="apoyo" value="servicio" <?php echo (($_SESSION["apoyo"] == "si") ? "checked": "")?> class="form-control">
+					    <br><input class="experiencia" type="checkbox" id="servicio" name="apoyoServicio" value="servicio" <?php echo (($_SESSION["apoyoServicio"] == "SI") ? "checked": "")?> class="form-control">
 						<br><label for="residentes">Residentes</label>
-						<br><input class="experiencia" type="checkbox" id="residentes" name="apoyo" value="residentes <?php echo (($_SESSION["apoyo"] == "si") ? "checked": "")?>" class="form-control">
+						<br><input class="experiencia" type="checkbox" id="residentes" name="apoyoResidentes" value="residentes" <?php echo (($_SESSION["apoyoResidentes"] == "SI") ? "checked": "")?> class="form-control">
 						<br></be><label for="bolsa">Bolsa de Trabajo</label>
-						<br><input class="experiencia" type="checkbox" id="bolsa" name="apoyo" value="bolsa" <?php echo (($_SESSION["apoyo"] == "si") ? "checked": "")?> class="form-control">
+						<br><input class="experiencia" type="checkbox" id="bolsa" name="apoyoBolsa" value="bolsa" <?php echo (($_SESSION["apoyoBolsa"] == "SI") ? "checked": "")?> class="form-control">
 					</div>
 				<input class="boton" type="submit" id="GuardarInformacion2" value="Guardar información" class="form-control btn btn-primary">
 			</div>

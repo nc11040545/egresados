@@ -27,7 +27,7 @@ html { padding:0; margin:0;}
 .menu ul li a.active {  background:url(images/r_menu.gif) no-repeat right;}
 .menu ul li a.active span {   background:url(images/l_menu.gif) no-repeat left;}
 /* body */
-.body_resize  { padding:0; width:960px; margin:0 auto;}
+.body_resize  { padding:0;  margin:0 auto;}
 .body { padding:20px 0; margin:0 auto; background:#fafafa; border-top:none; }
 		  /* Cambio de fuente */
 .body h2 { font-family: NexaB; color:#171717; padding:10px 5px 20px 5px; margin:0;}
@@ -38,7 +38,7 @@ html { padding:0; margin:0;}
 .body img.floated { float:left; margin:10px 10px; padding:0;}
 .full { margin:0; padding:10px;}
 .right { width:300px;margin:0; padding:10px; float:right;}
-.left {width:620px;margin:0; padding:10px; float:left;}
+.left {width:100%;margin:0; padding:10px; float:left;}
 .blog_port { width:281px; margin:0 5px; padding:15px 10px; float:left; border:1px solid #ddd; background:#fefefe;}
 /* Imagenes centradas de desarrolladores */
 .blog_port img { margin:0; padding:0 5px 10px 5px; float:none; }
