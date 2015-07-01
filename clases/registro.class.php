@@ -76,6 +76,21 @@ class registro{
 						$sql = "select * from datos_personales where id=".$r["id"];
 						$q = mysqli_query($conexion->link, $sql);
 						$r1 = mysqli_fetch_assoc($q);
+						$_SESSION ["nombre"]="";
+						$_SESSION ["paterno"]="";
+						$_SESSION ["materno"]="";
+						$_SESSION ["control"]="";
+						$_SESSION ["sexo"]="";
+						$_SESSION ["telefono"]="";
+						$_SESSION ["celular"]="";
+						$_SESSION ["direccion"]="";
+						$_SESSION ["ciudad"]="";
+						$_SESSION ["estado"]="";
+						$_SESSION ["carrera"]="";
+						$_SESSION ["generacion"]="";
+						$_SESSION ["correo"]="";
+						$_SESSION ["redes"]="";
+						$_SESSION ["compartir"]="";
 						if ($r1){
 								$_SESSION["nombre"] = $r1["Nombre"];
 								$_SESSION["paterno"] = $r1["Paterno"];
@@ -98,7 +113,19 @@ class registro{
 						$sql = "select * from experiencia_laboral where id=".$r["id"];
 						$q = mysqli_query($conexion->link, $sql);
 						$r2 = mysqli_fetch_assoc($q);
-						if ($r1){
+						$_SESSION ["tiempo"]="";
+						$_SESSION ["trabajando"]="";
+						$_SESSION ["ejerciendo"]="";
+						$_SESSION ["formal"]="";
+						$_SESSION ["negocio"]="";
+						$_SESSION ["teloficina"]="";
+						$_SESSION ["conocimiento"]="";
+						$_SESSION ["cursos"]="";
+						$_SESSION ["conferencias"]="";
+						$_SESSION ["apoyoServicio"]="";
+						$_SESSION ["apoyoResidentes"]="";
+						$_SESSION ["apoyoBolsa"]="";
+						if ($r2){
 								$_SESSION["tiempo"] = $r2["tiempo"];
 								$_SESSION["trabajando"] = $r2["trabajando"];
 								$_SESSION["ejerciendo"] = $r2["ejerciendo"];
@@ -113,6 +140,15 @@ class registro{
 								$_SESSION["apoyoBolsa"] = $r2["apoyoBolsa"];
 								
 								
+							}
+						$sql = "select * from titulado where id=".$r["id"];
+						$q = mysqli_query($conexion->link, $sql);
+						$r3 = mysqli_fetch_assoc($q);
+						$_SESSION ["situacion"]="";
+						$_SESSION ["motivo"]="";
+						if ($r3){
+								$_SESSION["situacion"] = $r3["situacion"];
+								$_SESSION["motivo"] = $r3["motivo"];
 							}
 						} else{echo"no";}
 	}

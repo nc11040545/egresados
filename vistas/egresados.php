@@ -273,9 +273,9 @@ font-style: oblique;
 			<div class="form-container">
 						<br><label for="situacion">Selecciona tu situación:</label>
 						<br><label for="Si">Si</label>
-						<input class="boton" type="radio" id="Si" name="situacion" value="si" class="form-control">
+						<input class="titulado" type="radio" id="Si" name="situacion" value="si" <?php echo (($_SESSION["situacion"]== "si") ? "checked": "") ?> class="form-control">
 						<br><label for="No">No</label>
-						<input class="titulado" type="radio" id="No" name="situacion" value="no" class="form-control">
+						<input class="titulado" type="radio" id="No" name="situacion" value="no" <?php echo (($_SESSION["situacion"] == "no") ? "checked": "") ?> class="form-control">
 					</div>
 			<div class="form-container">
 				<label for="motivo">Motivo</label>

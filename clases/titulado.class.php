@@ -9,8 +9,6 @@ class titulado{
 	public function getid(){return $this->id;}
 	public function getsituacion(){return $this->situacion;}
 	public function getmotivo(){return $this->motivo;}
-	public function getf_salida(){return $this->f_salida;}
-	public function getf_entrega(){return $this->f_entrega;}
 	public function getstatus(){return $this->status;}
 	public function setid($id){$this->id = $id;}
 	public function setsituacion($situacion){$this->situacion = $situacion;}
@@ -37,12 +35,9 @@ class titulado{
 	}
 	public function actualizatitulado(){
 		$conexion = new Conexion();
-		$sql = "update motivo set motivo= '$this->motivo' where 
-				id=$this->id";
-		mysqli_query($conexion->link, $sql) 
-				or die("Ocurrió un error: ".mysqli_error($conexion->link));
-		mysqli_close($conexion->link);
-		return "El motivo se ha actualizado";
+		echo $sql = "update titulado set situacion='$this->situacion', motivo='$this->motivo' where id=$this->id";
+		mysqli_query($conexion->link, $sql) or die("Error: ".mysqli_error($conexion->link));
+		echo "Titulado actualizada correctamente";
 	}
 }
 ?>

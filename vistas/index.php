@@ -1,5 +1,7 @@
 <?php
 session_start();
+session_destroy();
+session_start();
 if (isset($_SESSION['usuario']))
 {
     echo '<script>location.href = "egresados.php";</script>'; 
@@ -24,7 +26,7 @@ else
   <div class="header_blog2">
     <div class="header">
 		<img src="../images/logo.gif" width="338" aling="left" height="70" border="0" alt="logo">
-        <p>Esperamos que tu experiencia en este módulo <br />
+        <p>Esperamos que tú experiencia en este módulo <br />
         sea totalmente funcional y única.</p>
     </div>
     <div class="clr"></div>
