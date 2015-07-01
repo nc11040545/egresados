@@ -15,7 +15,7 @@
                <h1>Sistema para el Seguimiento de Egresados del Departamento de Sistemas y Computación</h1><hr>
                <h2>REGISTRATE</h2>
 			   <label>Nombre:</label>
-			   <input type="text" name="nombre"><br>
+			   <input type="text" onKeyUp="this.value = this.value.toUpperCase();" name="nombre" ><br>
 			   <label>Contraseña:</label>
 			   <input type="password" name="password" required ><br>
 			   <label>Repite Password:</label>

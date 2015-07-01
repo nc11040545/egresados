@@ -38,7 +38,7 @@ else
 		
         <form id="form-validar" method="POST" action="return false" onsubmit="return false">
             <div id="resultado"></div>
-            <p><input type="text" name="user" id="user" value="" placeholder="USUARIO"></p>
+            <p><input type="text" onKeyUp="this.value = this.value.toUpperCase();"  name="user" id="user" value="" placeholder="USUARIO"></p>
             <p><input type="password" name="pass" id="pass" value="" placeholder="*******"></p>
             <p></p><input type="submit" value="Entrar" class='boton'  id="btnentrar"/></p>
             
