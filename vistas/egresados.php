@@ -145,14 +145,14 @@ font-style: oblique;
 					</div>
 					<div class="form-container">
 						<label for="Carrera">Selecciona tu carrera</label>
-						<br><label for="informatica">Ing.Informática</label>
-					    <p><input class="datos" type="radio" id="informatica" name="Carrera" value="informatica" <?php echo (($_SESSION["carrera"] == "informatica") ? "checked": "")?> class="form-control"></p>
+						<br><input class="datos" type="radio" id="Ing.Informatica" name="Carrera" value="Ing.Informatica" <?php echo (($_SESSION["carrera"] == "Ing.Informatica") ? "checked": "")?> class="form-control">
+					    <label for="informatica">Ing.Informática</label>
+						<br><input class="datos" type="radio" id="Ing.Sistemas" name="Carrera" value="Ing.Sistemas" <?php echo (($_SESSION["carrera"] == "Ing.Sistemas") ? "checked": "")?>  class="form-control">
 						<label for="sistemas">Ing. en Sistemas Computacionales</label>
-						<br><input class="datos" type="radio" id="sistemas" name="Carrera" value="sistemas" <?php echo (($_SESSION["carrera"] == "sistemas") ? "checked": "")?>  class="form-control">
+						<br><input class="datos" type="radio" id="Ing.TIC'S" name="Carrera" value="Ing.TIC'S" <?php echo (($_SESSION["carrera"] == "Ing.TIC'S") ? "checked": "")?>  class="form-control">
 						<label for="tics">Ing. en Tecnologías de la Información y la Comunicación</label>
-						<br><input class="datos" type="radio" id="tics" name="Carrera" value="tics" <?php echo (($_SESSION["carrera"] == "tics") ? "checked": "")?>  class="form-control">
+						<br><input class="datos" type="radio" id="Lic.Informatica" name="Carrera" value="Lic.Informatica" <?php echo (($_SESSION["carrera"] == "Lic.Informatica") ? "checked": "")?>  class="form-control">
 						<label for="LInformatica">Licenciatura en Informática</label>
-						<br><input class="datos" type="radio" id="LInformatica" name="Carrera" value="LInformatica" <?php echo (($_SESSION["carrera"] == "LInformatica") ? "checked": "")?>  class="form-control">
 					</div>
 					<div class="form-container">
 						<label for="Generacion">Generación</label>
@@ -183,7 +183,16 @@ font-style: oblique;
 			<input type="hidden" name="id" value="<?= $_SESSION["idregistro"]?>">
 			<div class="form-container">
 				<label for="tiempo">¿Cuánto tiempo tardaste en conseguir tu primer empleo despues de egresar?</label>
-				<p><input class="experiencia" type="text" id="tiempo" name="tiempo" placeholder="Días, Meses o Años" value="<?= $_SESSION["tiempo"] ?>" class="form-control">
+				  id="tiempo" name="tiempo"  value="<?= $_SESSION["tiempo"] ?>" class="form-control" >
+				<br><select name="tiempo">
+					<option value="1">Selecciona una Opción</option> 
+                       <option value="2">Inmediato</option> 
+					   <option value="3">De 1 a 6 meses</option> 
+					   <option value="4">6 meses a 1 año</option>
+					   <option value="5">De 1 a 2 años</option> 
+					   <option value="6">Más de 2 años</option> 
+				</select>
+				
 			</div>
 			<div class="form-container">
 						<br><label for="situacion">¿Actualmente estas trabajando?:</label>
