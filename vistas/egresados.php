@@ -67,22 +67,22 @@ font-style: oblique;
 	  <div class="logo"><a href="index.php"><img src="../images/logo.gif" width="338" height="70" border="0" alt="logo" /></a></div>
       <div class="menu">
        <br><ul>
-          <li><a href="index.php"><span>Inicio</span></a></li>
+          <li><a href="index.php" class="active"><span>Inicio</span></a></li>
           <li><a href="" class="active"><span>Directorio</span></a></li>
-		  <li><a href="logout.php"><span>Cerrar Sesión </span></a></li>
+		  <li><a href="logout.php" class="active"><span>Cerrar Sesión </span></a></li>
         </ul>
       </div>
  </div>
       <div class="clr"></div>
       <div class="clr"></div>
-    </div>
   </div>
   <div class="clr"></div>
   <div class="header_blog2">
     <div class="header">
-      <h2 id="tituloSistema" align="left">Sistema para el Seguimiento de Egresados del Departamento de Sistemas y Computación</h2>
-      <center><p>Ing en Sistemas Computacionales <br>Aníbal Roberto Saucedo Rosales <br />
+      <h2 id="tituloSistema" align="center">BIENVENIDO</h2>
+      <center><p>Ing. en Sistemas Computacionales <br>Aníbal Roberto Saucedo Rosales <br />
          <strong>RESPONSABLE</strong></p></center>
+         <p>&nbsp;</p>
     </div>
     <div class="clr"></div>
   </div>
