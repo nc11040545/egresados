@@ -1,44 +1,15 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<link rel="Shortcut Icon" type="image/x-icon" href="../images/cube.ico" />	
-<meta charset="UTF-8">
-<title>INICIO DE SESIÓN</title>
-<script type="text/javascript" src="../js/jquery.js"></script>
-	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="../style.css" />
-</head>
-<body>
-      <div class="clr"></div>
-	  <div class="main">
-	  <div class="header_resize">
-	  <div class="header">
-	  <img src="../images/logo.gif" width="338" aling="left" height="70" border="0" alt="logo">
-	   </div>
-   <div class="clr"></div>
-      <div class="clr"></div>
-    </div>
-  </div>
-  <div class="clr"></div>
-  <div class="header_blog2">
-    <div class="header">
-    <h1 id="titulo" align="left" >Sistema para el Seguimiento de Egresados del Departamento de Sistemas y Computación</h1><hr>
-      </div>
-    <div class="clr"></div>
-  </div>
+ <h1 ALIGN=center>Sistema para el Seguimiento de Egresados del Departamento de Sistemas y Computación</h1><hr>
     <h2>INICIO DE SESIÓN</h2>
     <div id="formulario" class="contacto">
 		
         <form id="form-validar" method="POST" action="return false" onsubmit="return false">
             <div id="resultado"></div>
-            <p><input type="text" onKeyUp="this.value = this.value.toUpperCase();"  name="user" id="user" value="" placeholder="ADMINISTRADOR"></p>
+            <p><input type="text" onKeyUp="this.value = this.value.toUpperCase();"  name="user" id="user" value="" placeholder="USUARIO"></p>
             <p><input type="password" name="pass" id="pass" value="" placeholder="*******"></p>
             <p></p><input type="submit" value="Entrar" class='boton'  id="btnentrar"/></p>
             
              </form>
-      <!-- <script>
+      <! <script>
 		  $(document).on("submit","#form-validar",function(evento){
             evento.preventDefault();
 			debugger;
@@ -52,7 +23,7 @@
 						else {alert(respuesta);}
 				});
 		});
-          </script>!-->
+          </script> 
     </div>
 </div>
 </body>
