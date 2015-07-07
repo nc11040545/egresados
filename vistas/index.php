@@ -22,24 +22,17 @@ else
 <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
-      <div class="clr"></div>
-	  <div class="main">
-	  <div class="header_resize">
-	  <div class="header">
-	  <img src="../images/logo.gif" width="338" aling="left" height="70" border="0" alt="logo">
-	   </div>
-   <div class="clr"></div>
-      <div class="clr"></div>
-    </div>
-  </div>
-  <div class="clr"></div>
+	  <div class="clr"></div>
   <div class="header_blog2">
     <div class="header">
-    <h1 id="titulo" align="left" >Sistema para el Seguimiento de Egresados del Departamento de Sistemas y Computación</h1><hr>
-      </div>
+		<img src="../images/logo.gif" width="338" aling="left" height="70" border="0" alt="logo">
+        <p>Esperamos que tú experiencia en este módulo <br />
+        sea totalmente funcional y única.</p>
+    </div>
     <div class="clr"></div>
   </div>
-    
+  <div class="clr"></div>
+    <h1 ALIGN=center>Sistema para el Seguimiento de Egresados del Departamento de Sistemas y Computación</h1><hr>
     <h2>INICIO DE SESIÓN</h2>
     <div id="formulario" class="contacto">
 		
