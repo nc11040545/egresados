@@ -182,12 +182,18 @@ font-style: oblique;
 			<div class="form-container">
 				<label for="tiempo">¿Cuánto tiempo tardaste en conseguir tu primer empleo después de egresar?</label>
 				<br><select name="tiempo">
-					<option value="1">Selecciona una Opción</option> 
-                       <option value="2">Inmediato</option> 
-					   <option value="3">De 1 a 6 meses</option> 
-					   <option value="4">6 meses a 1 año</option>
-					   <option value="5">De 1 a 2 años</option> 
-					   <option value="6">Más de 2 años</option> 
+					   <option value="Selecciona una Opción">Selecciona una Opción</option>
+					   <?php echo (($_SESSION["tiempo"] == "si") ? "selected": "")?> class="form-control"> 
+                       <option value="Inmediato">Inmediato</option> 
+                        <?php echo (($_SESSION["tiempo"] == "si") ? "selected": "")?> class="form-control"> 
+					   <option value="De 1 a 6 meses">De 1 a 6 meses</option>
+					    <?php echo (($_SESSION["tiempo"] == "si") ? "selected": "")?> class="form-control">  
+					   <option value="6 meses a 1 año">6 meses a 1 año</option>
+					    <?php echo (($_SESSION["tiempo"] == "si") ? "selected": "")?> class="form-control"> 
+					   <option value="De 1 a 2 años">De 1 a 2 años</option> 
+					    <?php echo (($_SESSION["tiempo"] == "si") ? "selected": "")?> class="form-control"> 
+					   <option value="Más de 2 años">Más de 2 años</option>
+					    <?php echo (($_SESSION["tiempo"] == "si") ? "selected": "")?> class="form-control">  
 				</select>
 				
 			</div>

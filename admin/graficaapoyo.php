@@ -1,6 +1,6 @@
 <head>
 <meta charset="UTF-8">
-<title>Graficas de Titulados</title>
+<title>Grafica de Apoyos</title>
 <style>
 	.grafica{
 		width:1000px;
@@ -32,7 +32,7 @@
     </div>
   </div>
   <div class="clr"></div>
-    <h1 id="titulo" align="center" >Gráfica de Titulado</h1><hr>
+    <h1 id="titulo" align="center" >Gráfica de Apoyos</h1><hr>
       </div>
     <div class="clr"></div>
   </div>
@@ -54,11 +54,11 @@
 <script src="../src/plugins/jqplot.canvasAxisLabelRenderer.js"></script>
 </head>
 <body>
-<div id="titulado" class="grafica"></div>	
+<div id="apoyo" class="grafica"></div>	
 	
 <script>
-	$.get("titulado.php",function(jsonData){
-		 var plot1 = $.jqplot('titulado',jsonData,
+	$.get("apoyo.php",function(jsonData){
+		 var plot1 = $.jqplot('apoyo',jsonData,
 								{ 
 									seriesDefaults: {
 										renderer: jQuery.jqplot.PieRenderer, 
@@ -76,7 +76,10 @@
 include("../clases/conexion.class.php");
 $conexion = new Conexion(); 
 
-$sql =('SELECT case(situacion) when "si" then "TITULADO" ELSE "PASANTE" END AS situacion, COUNT( * ) AS total FROM  `titulado` GROUP BY situacion');
+$sql =('SELECT COUNT( * ) AS total, apoyoServicio, apoyoResidentes, apoyoBolsa
+FROM  `experiencia_laboral` 
+WHERE  `experiencia_laboral`.id
+GROUP BY apoyoServicio, apoyoResidentes, apoyoBolsa');
 $q = mysqli_query($conexion->link,$sql) or die(mysqli_error($conexion->link)); 
 
 /*
@@ -86,13 +89,13 @@ $i=0;*/
 if ($q) {
 	 echo "<table border='1' bordercolor='#A52A2A' align='center'> 
     <tr>
-		<td>Situación</td>
+		<td>Apoyo</td>
 		<td>Total</td>
     </tr>
     "; 
-    $total=0;
+     $total=0;
     while ($row = mysqli_fetch_array($q)) {
-	echo "<tr> <td>".$row ["situacion"]."</td><td> " .$row ["total"]."</td></tr>";	
+	echo "<tr><td>".$row ["apoyo"]."</td><td> " .$row ["total"]."</td></tr>";	
 	$total+=$row ["total"];
 	}
 	echo "<tr><td>Total</td><td>$total</td></tr>";
