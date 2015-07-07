@@ -1,14 +1,3 @@
-<?php
-session_start();
-session_destroy();
-session_start();
-if (isset($_SESSION['usuario']))
-{
-    echo '<script>location.href = "graficas.php";</script>'; 
-}
-else
-{
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -44,30 +33,30 @@ else
 		
         <form id="form-validar" method="POST" action="return false" onsubmit="return false">
             <div id="resultado"></div>
-            <p><input type="text" name="user" id="user" value="" placeholder="ADMINISTRADOR"></p>
+            <p><input type="text" onKeyUp="this.value = this.value.toUpperCase();"  name="user" id="user" value="" placeholder="ADMINISTRADOR"></p>
             <p><input type="password" name="pass" id="pass" value="" placeholder="*******"></p>
             <p></p><input type="submit" value="Entrar" class='boton'  id="btnentrar"/></p>
             
              </form>
-      <script>
+      <!-- <script>
 		  $(document).on("submit","#form-validar",function(evento){
             evento.preventDefault();
 			debugger;
-			$.post("../modelos/admin/validar.php", 
+			$.post("../modelos/registro/validar.php", 
 				$("#form-validar").serialize(), function(respuesta){
 					if (respuesta.indexOf("si")>=0)
 					
 					{
-						location.href="graficas.php";
+						location.href="egresados.php";
 						}
 						else {alert(respuesta);}
 				});
 		});
-          </script>
+          </script>!-->
     </div>
 </div>
 </body>
 </html>
 <?php
-}
+
 ?>

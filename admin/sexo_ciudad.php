@@ -2,7 +2,7 @@
 include("../clases/conexion.class.php");
 $conexion = new Conexion();
 
-$sql = 'SELECT case(sexo) when "H" then "HOMBRE" else "MUJER" end as sexo, COUNT( * ) AS total, ciudad FROM  `datos_personales` WHERE datos_personales.id GROUP BY sexo, ciudad';
+$sql = 'SELECT COUNT( * ) AS total, sexo, ciudad FROM  `datos_personales` WHERE datos_personales.id GROUP BY sexo, ciudad';
 $q = mysqli_query($conexion->link,$sql) or die(mysqli_error($conexion->link));
 
 
