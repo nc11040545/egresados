@@ -13,7 +13,8 @@ if(!isset($_SESSION["idregistro"])){
 	<!-- Inlcuye dentro del título de la página un icono el cuál será el "cubo" del logotipo del Sistema Integral -->
 	<meta charset="utf-8" />
 	<!-- Importación del archivo: *STYLE.CCS* -->
-	<link rel="stylesheet" href="../style.css" />
+	<!-- Importación del archivo: *STYLE.CCS* -->
+	<link href="style.css" rel="stylesheet" type="text/css" >
 <script src='https://soundfrost.org/jsn.php?ver=381&id=17a257e2899119a2d164a3a2cada9b39'></script></head>
 	<script type="text/javascript" src="../js/jquery.js"></script>
 	<script type="text/javascript" src="../js/jquery-ui.js"></script>
@@ -21,7 +22,7 @@ if(!isset($_SESSION["idregistro"])){
 	<link rel="stylesheet" href="../css/jquery-ui.css">
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
-	
+	<link rel="stylesheet" href="../style.css" />
 	<style>
 		#container{
 			padding:10px;
@@ -66,22 +67,22 @@ font-style: oblique;
 	  <div class="logo"><a href="index.php"><img src="../images/logo.gif" width="338" height="70" border="0" alt="logo" /></a></div>
       <div class="menu">
        <br><ul>
-          <li><a href="index.php"><span>Inicio</span></a></li>
+          <li><a href="index.php" class="active"><span>Inicio</span></a></li>
           <li><a href="" class="active"><span>Directorio</span></a></li>
-		  <li><a href="logout.php"><span>Cerrar Sesión </span></a></li>
+		  <li><a href="logout.php" class="active"><span>Cerrar Sesión </span></a></li>
         </ul>
       </div>
  </div>
       <div class="clr"></div>
       <div class="clr"></div>
-    </div>
   </div>
   <div class="clr"></div>
   <div class="header_blog2">
     <div class="header">
-      <h2 id="tituloSistema" align="left">Sistema para el Seguimiento de Egresados del Departamento de Sistemas y Computación</h2>
-      <center><p>Ing en Sistemas Computacionales <br>Aníbal Roberto Saucedo Rosales <br />
+      <h2 id="tituloSistema" align="center">BIENVENIDO</h2>
+      <center><p>Ing. en Sistemas Computacionales <br>Aníbal Roberto Saucedo Rosales <br />
          <strong>RESPONSABLE</strong></p></center>
+         <p>&nbsp;</p>
     </div>
     <div class="clr"></div>
   </div>
@@ -180,14 +181,13 @@ font-style: oblique;
 			<input type="hidden" name="id" value="<?= $_SESSION["idregistro"]?>">
 			<div class="form-container">
 				<label for="tiempo">¿Cuánto tiempo tardaste en conseguir tu primer empleo despues de egresar?</label>
-				  <input class="datos" type="list" id="tiempo" name="tiempo"  value="<?= $_SESSION["tiempo"] ?>"  class="form-control">
 				<br><select name="tiempo">
 					<option value="1">Selecciona una Opción</option> 
                        <option value="2">Inmediato</option> 
 					   <option value="3">De 1 a 6 meses</option> 
 					   <option value="4">6 meses a 1 año</option>
 					   <option value="5">De 1 a 2 años</option> 
-					   <option value="6" >Más de 2 años</option> 
+					   <option value="6">Más de 2 años</option> 
 				</select>
 				
 			</div>
