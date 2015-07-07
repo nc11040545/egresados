@@ -56,7 +56,7 @@ $datos_personales= array();
 $datos = array();
 $i=0;*/
 if ($q) {
-	 echo "<table> 
+	 echo "<table border='1' bordercolor='#A52A2A'> 
     <tr>
 		<td>Situación</td>
 		<td>Total</td>

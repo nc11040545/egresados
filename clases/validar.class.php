@@ -20,7 +20,7 @@ else
     if (mysqli_num_rows($consulta) > 0)
     {
         $_SESSION["usuario"] = $user;
-        echo '<script>location.href = "chido.php"</script>';
+        echo '<script>location.href = "egresados.php"</script>';
     }
     else
     {

@@ -26,19 +26,22 @@
 <script src="../src/plugins/jqplot.canvasAxisLabelRenderer.js"></script>
 </head>
 <body>
-<div id="chart2" class="grafica"></div>	
-<div id="titulado" class="grafica"></div>	
-<div id="sexo_titulado" class="grafica"></div>	
-<div id="ejerciendo" class="grafica"></div>	
-<div id="sexo_ejerciendo" class="grafica"></div>
-<div id="carrera" class="grafica"></div>
-<div id="sexo_carrera" class="grafica"></div>
-<div id="ciudad" class="grafica"></div>	
-<div id="sexo_ciudad" class="grafica"></div>
-<div id="apoyo" class="grafica"></div>		
+<a href="graficasexo.php" div id="sexo" class="grafica"></a></div>	
+<a href="graficatitulado.php" div id="titulado" class="grafica"></a></div>	
+<a href="graficasexo_titulado.php" div id="sexo_titulado" class="grafica"></a></div>	
+<a href="graficaejerciendo.php" div id="ejerciendo" class="grafica"></a></div>	
+<a href="graficasexo_ejerciendo.php" div id="sexo_ejerciendo" class="grafica"></a></div>
+<a href="graficacarrera.php" div id="carrera" class="grafica"></a></div>
+<a href="graficasexo_carrera.php" div id="sexo_carrera" class="grafica"></a></div>
+<a href="graficaciudad.php" div id="ciudad" class="grafica"></a></div>	
+<a href="graficasexo_ciudad.php" div id="sexo_ciudad" class="grafica"></a></div>
+<a href="graficaapoyo.php" div id="apoyo" class="grafica"></a></div>	
+<a href="graficatiempo.php" div id="tiempo" class="grafica"></a></div>
+<a href="graficasexo_tiempo.php" div id="sexo_tiempo" class="grafica"></a></div>	
+
 <script>
 	$.get("sexo.php",function(jsonData){
-		 var plot1 = $.jqplot('chart2',jsonData,
+		 var plot1 = $.jqplot('sexo',jsonData,
 								{ 
 									seriesDefaults: {
 										renderer: jQuery.jqplot.PieRenderer, 
@@ -165,6 +168,34 @@
 		},"json");
 		$.get("apoyo.php",function(jsonData){
 		 var plot2 = $.jqplot('apoyo',jsonData,
+								{ 
+									seriesDefaults: {
+										renderer: jQuery.jqplot.PieRenderer, 
+										rendererOptions: {
+										showDataLabels: true
+										}
+									}, 
+									legend: { show:true, location: 'e' }
+								}
+								);
+		
+		},"json");
+		$.get("tiempo.php",function(jsonData){
+		 var plot2 = $.jqplot('tiempo',jsonData,
+								{ 
+									seriesDefaults: {
+										renderer: jQuery.jqplot.PieRenderer, 
+										rendererOptions: {
+										showDataLabels: true
+										}
+									}, 
+									legend: { show:true, location: 'e' }
+								}
+								);
+		
+		},"json");
+		$.get("sexo_tiempo.php",function(jsonData){
+		 var plot2 = $.jqplot('sexo_tiempo',jsonData,
 								{ 
 									seriesDefaults: {
 										renderer: jQuery.jqplot.PieRenderer, 
