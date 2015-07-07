@@ -13,8 +13,7 @@ if(!isset($_SESSION["idregistro"])){
 	<!-- Inlcuye dentro del título de la página un icono el cuál será el "cubo" del logotipo del Sistema Integral -->
 	<meta charset="utf-8" />
 	<!-- Importación del archivo: *STYLE.CCS* -->
-	<!-- Importación del archivo: *STYLE.CCS* -->
-	<link href="style.css" rel="stylesheet" type="text/css" >
+	<link rel="stylesheet" href="../style.css" />
 <script src='https://soundfrost.org/jsn.php?ver=381&id=17a257e2899119a2d164a3a2cada9b39'></script></head>
 	<script type="text/javascript" src="../js/jquery.js"></script>
 	<script type="text/javascript" src="../js/jquery-ui.js"></script>
@@ -22,7 +21,7 @@ if(!isset($_SESSION["idregistro"])){
 	<link rel="stylesheet" href="../css/jquery-ui.css">
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="../style.css" />
+	
 	<style>
 		#container{
 			padding:10px;
@@ -181,14 +180,14 @@ font-style: oblique;
 			<input type="hidden" name="id" value="<?= $_SESSION["idregistro"]?>">
 			<div class="form-container">
 				<label for="tiempo">¿Cuánto tiempo tardaste en conseguir tu primer empleo despues de egresar?</label>
-				  id="tiempo" name="tiempo"  value="<?= $_SESSION["tiempo"] ?>" class="form-control" >
+				  <input class="datos" type="list" id="tiempo" name="tiempo"  value="<?= $_SESSION["tiempo"] ?>"  class="form-control">
 				<br><select name="tiempo">
 					<option value="1">Selecciona una Opción</option> 
                        <option value="2">Inmediato</option> 
 					   <option value="3">De 1 a 6 meses</option> 
 					   <option value="4">6 meses a 1 año</option>
 					   <option value="5">De 1 a 2 años</option> 
-					   <option value="6">Más de 2 años</option> 
+					   <option value="6" >Más de 2 años</option> 
 				</select>
 				
 			</div>
@@ -270,7 +269,7 @@ font-style: oblique;
 				<input class="boton" type="submit" id="GuardarInformacion4" value="Guardar información" class="form-control btn btn-primary">
 			</div>
 		</form>
-		<ul id="lista_empleos_anteriores"></ul>
+		<ul id="lista_empleos_anteriores" class="list-group"></ul>
 	     </div>
 			<h3>Titulado</h3>
 			<div>
@@ -302,7 +301,7 @@ font-style: oblique;
 			$.get("../modelos/empleos_anteriores/listar.php",function(registros){
 				debugger;
 				registros.forEach(function(registro, index){
-					$("#lista_empleos_anteriores").prepend("<li id='"+
+					$("#lista_empleos_anteriores").prepend("<li class='list-group-item' id='"+
 							registro.id+"'>"+
 							registro.empresa+
 							"<div class='acciones'>"+
