@@ -180,7 +180,7 @@ font-style: oblique;
 		<form id="form-insertar2" action="" class="form">
 			<input type="hidden" name="id" value="<?= $_SESSION["idregistro"]?>">
 			<div class="form-container">
-				<label for="tiempo">¿Cuánto tiempo tardaste en conseguir tu primer empleo despues de egresar?</label>
+				<label for="tiempo">¿Cuánto tiempo tardaste en conseguir tu primer empleo después de egresar?</label>
 				<br><select name="tiempo">
 					<option value="1">Selecciona una Opción</option> 
                        <option value="2">Inmediato</option> 
