@@ -49,7 +49,9 @@ else
             <p><input type="password" name="pass" id="pass" value="" placeholder="*******"></p>
             <p></p><input type="submit" value="Entrar" class='boton'  id="btnentrar"/></p>
             
-            <a href="registro.php">REGISTRATE</a><br>
+            <a href="registro.php">REGISTRATE</a>
+            <a href="recuperar_contrasena.php">¿Olvidaste tu cuenta?</a><br>
+            
             
             
         <h2 ALIGN=center>¿QUÉ ES ESTE SISTEMA? </h2>
