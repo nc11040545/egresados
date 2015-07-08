@@ -52,9 +52,10 @@ else
        <script>
 		  $(document).on("submit","#form-validar",function(evento){
             evento.preventDefault();
-			debugger;
+			
 			$.post("../modelos/admin/validar.php", 
 				$("#form-validar").serialize(), function(respuesta){
+					console.log(respuesta);
 					if (respuesta.indexOf("si")>=0)
 					
 					{
