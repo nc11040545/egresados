@@ -68,7 +68,7 @@ font-style: oblique;
       <div class="menu">
        <br><ul>
           <li><a href="index.php" class="active"><span>Inicio</span></a></li>
-          <li><a href="" class="active"><span>Directorio</span></a></li>
+          <li><a href="directorio.php" class="active"><span>Directorio Egresados</span></a></li>
 		  <li><a href="logout.php" class="active"><span>Cerrar Sesión </span></a></li>
         </ul>
       </div>
@@ -182,18 +182,13 @@ font-style: oblique;
 			<div class="form-container">
 				<label for="tiempo">¿Cuánto tiempo tardaste en conseguir tu primer empleo después de egresar?</label>
 				<br><select name="tiempo">
-					   <option value="Selecciona una Opción">Selecciona una Opción</option>
-					   <?php echo (($_SESSION["tiempo"] == "si") ? "selected": "")?> class="form-control"> 
-                       <option value="Inmediato">Inmediato</option> 
-                        <?php echo (($_SESSION["tiempo"] == "si") ? "selected": "")?> class="form-control"> 
-					   <option value="De 1 a 6 meses">De 1 a 6 meses</option>
-					    <?php echo (($_SESSION["tiempo"] == "si") ? "selected": "")?> class="form-control">  
-					   <option value="6 meses a 1 año">6 meses a 1 año</option>
-					    <?php echo (($_SESSION["tiempo"] == "si") ? "selected": "")?> class="form-control"> 
-					   <option value="De 1 a 2 años">De 1 a 2 años</option> 
-					    <?php echo (($_SESSION["tiempo"] == "si") ? "selected": "")?> class="form-control"> 
-					   <option value="Más de 2 años">Más de 2 años</option>
-					    <?php echo (($_SESSION["tiempo"] == "si") ? "selected": "")?> class="form-control">  
+					   <option value="Selecciona una Opción"  <?php echo (($_SESSION["tiempo"] == "Selecciona una Opción") ? "selected": "")?> class="form-control">Selecciona una Opción</option>
+					   <option value="Inmediato" <?php echo (($_SESSION["tiempo"] == "Inmediato") ? "selected": "")?> class="form-control">Inmediato</option> 
+                       <option value="De 1 a 6 meses" <?php echo (($_SESSION["tiempo"] == "De 1 a 6 meses") ? "selected": "")?> class="form-control">De 1 a 6 meses</option>
+					   <option value="6 meses a 1 año" <?php echo (($_SESSION["tiempo"] == "6 meses a 1 año") ? "selected": "")?> class="form-control">6 meses a 1 año</option>
+					   <option value="De 1 a 2 años" <?php echo (($_SESSION["tiempo"] == "De 1 a 2 años") ? "selected": "")?> class="form-control">De 1 a 2 años</option> 
+					   <option value="Más de 2 años" <?php echo (($_SESSION["tiempo"] == "Más de 2 años") ? "selected": "")?> class="form-control">Más de 2 años</option>
+					      
 				</select>
 				
 			</div>
