@@ -57,7 +57,7 @@ class Experiencia_Laboral{
 		$conexion = new Conexion();
 		$sql = "insert ignore into experiencia_laboral(id, tiempo, trabajando, ejerciendo, formal, negocio, telOficina, conocimiento, cursos, conferencias, apoyoServicio, apoyoResidentes, apoyoBolsa) 
 		values('$id','$tiempo', '$trabajando', '$ejerciendo', '$formal', '$negocio', '$telOficina', '$conocimiento', '$cursos', '$conferencias', '$apoyoServicio','$apoyoResidentes', '$apoyoBolsa')";
-		mysqli_query($conexion->link, $sql) or die("Error: ".mysqli_error($conexion->link));
+		$r = mysqli_query($conexion->link, $sql) or die("Error: ".mysqli_error($conexion->link));
 		if (mysqli_affected_rows($conexion->link) > 0){
 			return "Experiencia laboral insertada correctamente";
 		}else{
@@ -72,7 +72,7 @@ class Experiencia_Laboral{
 		 cursos='$this->cursos', conferencias='$this->conferencias', apoyoServicio='$this->apoyoServicio',
 		 apoyoResidentes='$this->apoyoResidentes', apoyoBolsa='$this->apoyoBolsa' where id=$this->id";
 		mysqli_query($conexion->link, $sql) or die("Error: ".mysqli_error($conexion->link));
-		echo "Experiencia laboral actualizada correctamente";
+		 echo "Experiencia laboral actualizada correctamente";
 	}
 	
 	
