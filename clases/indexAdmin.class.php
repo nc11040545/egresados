@@ -1,6 +1,6 @@
 <?php 
 include ("conexion.class.php");
-class Admin{
+class indexAdmin{
 	private $usuario;
 	private $contrasena;
 	private $status=true;
@@ -25,15 +25,20 @@ class Admin{
 		while ($reg = mysqli_fetch_assoc($query)){ $regs[] = $reg;}		
 		echo json_encode($regs);
 	}
+	
 	public function validarAdmin(){
 		$conexion = new Conexion();
-		$sql = "select count(*) total from index_admin where usuario='$this->usuario' and contrasena='$this->contrasena'";
+		echo $sql = "select count(*) total from index_admin where usuario='$this->usuario' and contrasena='$this->contrasena'";
 		$q = mysqli_query($conexion->link, $sql) or die("Error: ".mysqli_error($conexion->link));
 		$r = mysqli_fetch_assoc($q);
 		if ($r["total"] > 0){
 			echo "--si--";
+			session_start();
+						$_SESSION["usuario"]="si";
+						
 		}else{
 			echo "---no---";
+						
 			}
 	}
 }

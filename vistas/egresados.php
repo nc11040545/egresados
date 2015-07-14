@@ -23,42 +23,7 @@ if(!isset($_SESSION["idregistro"])){
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="../style.css" />
-	<style>
-		#container{
-			padding:10px;
-			width:100%;
-			height:635px;
-			}
-			
-/*Cambiar las propiedades del contenido: background, font-size, font-family ...*/
-.ui-accordion .ui-accordion-content
-{
-
-background: #F5F5F5;
-color: black;
-font-size: 14px;
-}
-/*Cambiar las propiedades de la cabecera: background, font-size, font-family ...*/
-.ui-accordion .ui-accordion-header
-{
-background: black;
-color: #FFFFFF;
-font-size: 18px;
-}
-
-/*Cambiar las propiedades de la tecla activa de la cabecera: background, font-size, font-family ...*/
-.ui-accordion .ui-accordion-header-active
-{
-background: navy;
-}
-/*Cambiar las propiedades de la cabecera al pasar el mouse sobre: background, font-size, font-family ...*/
-.ui-accordion .ui-accordion-header:hover
-{
-background: Dodgerblue;
-font-style: oblique;
-
-}
-	</style>
+	
 </head>
 <body>
 <div class="main">
@@ -394,7 +359,7 @@ font-style: oblique;
 			$.post("../modelos/empleos_anteriores/insertar.php", 
 				$("#form-insertar4").serialize(), function(respuesta){
 					alert(respuesta);
-					if (respuesta.indexOf("Empeos anteriores guardados correctamente") > 0){}
+					if (respuesta.indexOf("Empleos anteriores guardados correctamente") > 0){}
 					
 				});
 		});

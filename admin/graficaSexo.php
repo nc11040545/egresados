@@ -82,7 +82,7 @@ $q = mysqli_query($conexion->link,$sql) or die(mysqli_error($conexion->link));
 
 
 if ($q) {
-	 echo "<table border='1' bordercolor='#A52A2A' align='center'> 
+	 echo "<table border='5' bordercolor='#8A0808' align='center'>  
     <tr>
 		<td>Sexo</td>
 		<td>Total</td>

@@ -11,30 +11,31 @@ else
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<link rel="Shortcut Icon" type="image/x-icon" href="../images/cube.ico" />	
-<meta charset="UTF-8">
-<title>INICIO DE SESIÓN</title>
-<script type="text/javascript" src="../js/jquery.js"></script>
-	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="../style.css" />
+            <link rel="Shortcut Icon" type="image/x-icon" href="../images/cube.ico" />	
+			<meta charset="UTF-8">
+			<title>INICIO DE SESIÓN</title>
+			<script type="text/javascript" src="../js/jquery.js"></script>
+			<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+			<link rel="stylesheet" href="../css/bootstrap.min.css">
+			<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+			<link rel="stylesheet" href="../style.css" />
 </head>
 <body>
-      <div class="clr"></div>
-	  <div class="main">
-	  <div class="header_resize">
-	  <div class="header">
-	  <img src="../images/logo.gif" width="338" aling="left" height="70" border="0" alt="logo">
+     <div class="clr"></div>
+	   <div class="main">
+	     <div class="header_resize">
+	       <div class="header">
+	         <img src="../images/logo.gif" width="338" aling="left" height="70" border="0" alt="logo">
 	   </div>
-   <div class="clr"></div>
-      <div class="clr"></div>
+          <div class="clr"></div>
+           <div class="clr"></div>
     </div>
-  </div>
-  <div class="clr"></div>
-  <div class="header_blog2">
-    <div class="header">
+	  </div>
+	  <div class="clr"></div>
+	  <div class="header_blog2">
+      <div class="header">
     <h1 id="titulo" align="left" >Sistema para el Seguimiento de Egresados del Departamento de Sistemas y Computación</h1><hr>
       </div>
     <div class="clr"></div>
@@ -52,7 +53,7 @@ else
        <script>
 		  $(document).on("submit","#form-validar",function(evento){
             evento.preventDefault();
-			
+            debugger;
 			$.post("../modelos/admin/validar.php", 
 				$("#form-validar").serialize(), function(respuesta){
 					console.log(respuesta);

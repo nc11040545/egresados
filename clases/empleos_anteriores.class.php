@@ -30,6 +30,11 @@ class empleos_anteriores{
 		while ($reg = mysqli_fetch_assoc($query)){ $regs[] = $reg;}		
 		echo json_encode($regs);
 	}
-
+public function bajaEmpleo($id){
+		$conexion = new Conexion();
+		$sql = "delete from empleos_anteriores where id=$id";
+		mysqli_query($conexion->link, $sql) or die("Error: ".mysqli_error($conexion->link));
+		echo "Empleo borrado correctamente";
+	}
 }
 ?>

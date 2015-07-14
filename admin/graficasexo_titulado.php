@@ -56,6 +56,7 @@
 </head>
 <body>
 <div id="sexo_titulado" class="grafica"></div>	
+
 	
 <script>
 	$.get("sexo_titulado.php",function(jsonData){
@@ -88,7 +89,7 @@ $datos_personales= array();
 $datos = array();
 $i=0;*/
 if ($q) {
-	 echo "<table border='1'  bordercolor='#A52A2A' align='center'>
+	 echo "<table border='5' bordercolor='#8A0808' align='normal'> 
     <tr>
 		<td>Situación</td>
 		<td>Sexo</td>

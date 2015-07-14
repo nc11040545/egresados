@@ -1,14 +1,14 @@
+<?php 
+session_start();
+if(!isset($_SESSION["usuario"])){
+die("<script>lo-cation.href='index.php';</script>");}
+//print_r($_SESSION);
+//die();
+?>
+<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
-<title>Graficas</title>
-<style>
-	.grafica{
-		width:400px;
-		height=400px;
-		display:inline-block;
-	}
-</style>
-<!DOCTYPE html>
+<title>Gráficas</title>
 <html lang="es">
 <head>
 <link rel="Shortcut Icon" type="image/x-icon" href="../images/cube.ico" />	
@@ -16,17 +16,25 @@
 <title>INICIO DE SESIÓN</title>
 <script type="text/javascript" src="../js/jquery.js"></script>
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../style.css" />
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="../style.css" />
+
 </head>
 <body>
-      <div class="clr"></div>
-	  <div class="main">
+<div class="main">
 	  <div class="header_resize">
 	  <div class="header">
-	  <img src="../images/logo.gif" width="338" aling="left" height="70" border="0" alt="logo">
-	   </div>
+	  <div class="logo"><img src="../images/logo.gif" width="338" aling="left" height="70" border="0" alt="logo"></div>
+	         <div class="menu">
+       <br><ul>
+          <li><a href="index.php" class="active"><span>Inicio</span></a></li>
+          <li><a href="directorio.php" class="active"><span>Directorio de Egresados</span></a></li>
+		  <li><a href="logout.php" class="active"><span>Cerrar Sesión </span></a></li>
+        </ul>
+      </div>
+     </div>
+	   
    <div class="clr"></div>
       <div class="clr"></div>
     </div>
@@ -70,8 +78,11 @@
 
 <script>
 	$.get("sexo.php",function(jsonData){
+		
 		 var plot1 = $.jqplot('sexo',jsonData,
 								{ 
+									title: 'Gráfica de Género',
+									
 									seriesDefaults: {
 										renderer: jQuery.jqplot.PieRenderer, 
 										rendererOptions: {
@@ -86,6 +97,7 @@
 			$.get("titulado.php",function(jsonData){
 		 var plot2 = $.jqplot('titulado',jsonData,
 								{ 
+									title: 'Gráfica de Titulados',
 									seriesDefaults: {
 										renderer: jQuery.jqplot.PieRenderer, 
 										rendererOptions: {
@@ -98,8 +110,9 @@
 		
 		},"json");
 		$.get("sexo_titulado.php",function(jsonData){
-		 var plot2 = $.jqplot('sexo_titulado',jsonData,
+		 var plot3 = $.jqplot('sexo_titulado',jsonData,
 								{ 
+									title: 'Gráfica de Titulados por Género',
 									seriesDefaults: {
 										renderer: jQuery.jqplot.PieRenderer, 
 										rendererOptions: {
@@ -112,8 +125,9 @@
 		
 		},"json");
 		$.get("ejerciendo.php",function(jsonData){
-		 var plot2 = $.jqplot('ejerciendo',jsonData,
+		 var plot4 = $.jqplot('ejerciendo',jsonData,
 								{ 
+									title: 'Gráfica de Ejerciendo Carrera',
 									seriesDefaults: {
 										renderer: jQuery.jqplot.PieRenderer, 
 										rendererOptions: {
@@ -126,8 +140,9 @@
 		
 		},"json");
 		$.get("sexo_ejerciendo.php",function(jsonData){
-		 var plot2 = $.jqplot('sexo_ejerciendo',jsonData,
+		 var plot5 = $.jqplot('sexo_ejerciendo',jsonData,
 								{ 
+									title:'Gráfica de Ejerciendo Carrera por Género',
 									seriesDefaults: {
 										renderer: jQuery.jqplot.PieRenderer, 
 										rendererOptions: {
@@ -140,8 +155,9 @@
 		
 		},"json");
 		$.get("carrera.php",function(jsonData){
-		 var plot2 = $.jqplot('carrera',jsonData,
+		 var plot6 = $.jqplot('carrera',jsonData,
 								{ 
+									title: 'Gráfica de Carrera',
 									seriesDefaults: {
 										renderer: jQuery.jqplot.PieRenderer, 
 										rendererOptions: {
@@ -154,8 +170,9 @@
 		
 		},"json");
 		$.get("ciudad.php",function(jsonData){
-		 var plot1 = $.jqplot('ciudad',jsonData,
+		 var plot7 = $.jqplot('ciudad',jsonData,
 								{ 
+									title: 'Gráfica de Lugar donde Residen los Egresados',
 									seriesDefaults: {
 										renderer: jQuery.jqplot.PieRenderer, 
 										rendererOptions: {
@@ -168,8 +185,9 @@
 		
 		},"json");
 		$.get("sexo_ciudad.php",function(jsonData){
-		 var plot2 = $.jqplot('sexo_ciudad',jsonData,
+		 var plot8 = $.jqplot('sexo_ciudad',jsonData,
 								{ 
+									title: 'Gráfica de Lugar donde Residen los Egresados por Género',
 									seriesDefaults: {
 										renderer: jQuery.jqplot.PieRenderer, 
 										rendererOptions: {
@@ -182,8 +200,9 @@
 		
 		},"json");
 		$.get("sexo_carrera.php",function(jsonData){
-		 var plot2 = $.jqplot('sexo_carrera',jsonData,
+		 var plot9 = $.jqplot('sexo_carrera',jsonData,
 								{ 
+									title: 'Gráfica de Ejerciendo Carrera por Género',
 									seriesDefaults: {
 										renderer: jQuery.jqplot.PieRenderer, 
 										rendererOptions: {
@@ -196,8 +215,9 @@
 		
 		},"json");
 		$.get("apoyo.php",function(jsonData){
-		 var plot2 = $.jqplot('apoyo',jsonData,
+		 var plot10 = $.jqplot('apoyo',jsonData,
 								{ 
+									title: 'Gráfica de Apoyos',
 									seriesDefaults: {
 										renderer: jQuery.jqplot.PieRenderer, 
 										rendererOptions: {
@@ -210,8 +230,9 @@
 		
 		},"json");
 		$.get("tiempo.php",function(jsonData){
-		 var plot2 = $.jqplot('tiempo',jsonData,
+		 var plot11 = $.jqplot('tiempo',jsonData,
 								{ 
+									title: 'Gráfica de Tiempo en Conseguir Empleo',
 									seriesDefaults: {
 										renderer: jQuery.jqplot.PieRenderer, 
 										rendererOptions: {
@@ -224,8 +245,9 @@
 		
 		},"json");
 		$.get("sexo_tiempo.php",function(jsonData){
-		 var plot2 = $.jqplot('sexo_tiempo',jsonData,
+		 var plot12 = $.jqplot('sexo_tiempo',jsonData,
 								{ 
+									title: 'Gráfica de Tiempo en Conseguir Empleo por Género',
 									seriesDefaults: {
 										renderer: jQuery.jqplot.PieRenderer, 
 										rendererOptions: {

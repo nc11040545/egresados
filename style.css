@@ -92,10 +92,19 @@ div#slideshow { float: left; width: 100%; height: 341px; }
 	font-family: ExcelsiorB;
 	font-size:80%; 
 }
+.grafica{
+		width:600px;
+		height:400px;
+		display:inline-block;
+	}
 #titulo{
 	font-family: NexaB;
 	font-size:180%; 
 }
+#tituloDirectorio{
+	font-family: Helvetica;
+	font-size:180%;
+} 
 #tituloSistema{
 	font-family: NexaB;
 	font-size:140%; 
@@ -112,8 +121,49 @@ div#slideshow { float: left; width: 100%; height: 341px; }
 	font-family: NexaB;
 	font-size:150%; 
 }
+#tablas {font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;    margin: 45px;     width: 480px; text-align: left;    border-collapse: collapse; }
+th {     font-size: 13px;     font-weight: normal;     padding: 8px;     background: #b9c9fe;
+    border-top: 4px solid #aabcfe;    border-bottom: 1px solid #fff; color: #039; }
+td {    padding: 8px;     background: #e8edff;     border-bottom: 1px solid #fff;
+    color: #669;    border-top: 1px solid transparent; }
+tr:hover td { background: #d0dafd; color: #339; }
 h1{
 font-family: Code;
+}
+#container{
+			padding:10px;
+			width:100%;
+			height:635px;
+			}
+			
+/*Cambiar las propiedades del contenido: background, font-size, font-family ...*/
+.ui-accordion .ui-accordion-content
+{
+
+background: #F5F5F5;
+color: black;
+font-size: 14px;
+}
+/*Cambiar las propiedades de la cabecera: background, font-size, font-family ...*/
+.ui-accordion .ui-accordion-header
+{
+background: black;
+color: #FFFFFF;
+font-size: 18px;
+}
+
+/*Cambiar las propiedades de la tecla activa de la cabecera: background, font-size, font-family ...*/
+.ui-accordion .ui-accordion-header-active
+{
+background: navy;
+}
+/*Cambiar las propiedades de la cabecera al pasar el mouse sobre: background, font-size, font-family ...*/
+.ui-accordion .ui-accordion-header:hover
+{
+background: Dodgerblue;
+font-style: oblique;
+
 }
 .flechita {
   list-style-image:url("images/flechita.png");
