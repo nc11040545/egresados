@@ -43,12 +43,12 @@ $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 //$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
  
 if(!$mail->send()) {
-   echo 'Message could not be sent.';
+   echo 'El mensaje no pudo ser enviado.';
    echo 'Mailer Error: ' . $mail->ErrorInfo;
    exit;
 }
  
-echo 'Message has been sent';
+echo 'El mesaje ha sido enviado';
 }else{
 	echo "Correo no registrado";
 	}

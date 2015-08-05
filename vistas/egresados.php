@@ -30,8 +30,8 @@ if(!isset($_SESSION["idregistro"])){
   <div class="header_resize">
     <div class="header">
 	  <div class="logo"><a href="index.php"><img src="../images/logo.gif" width="338" height="70" border="0" alt="logo" /></a></div>
-      <div class="menu">
-       <br><ul>
+      <div class="menu" id="menu">
+       <ul> 
           <li><a href="index.php" class="active"><span>Inicio</span></a></li>
           <li><a href="directorio.php" class="active"><span>Directorio Egresados</span></a></li>
 		  <li><a href="logout.php" class="active"><span>Cerrar Sesión </span></a></li>
@@ -57,26 +57,22 @@ if(!isset($_SESSION["idregistro"])){
       <div class="left">
 	<div id="container">
 		<div id="accordion">
-			<h3 class="panel-heading">Datos personales</h3>
+			<h3 class="panel-heading">Datos Personales</h3>
 			<div>
 				<h5>Ingresa tus Datos Personales</h5>
 				<form id="form-insertar" action="" class="form">
 					<input type="hidden" name="id" value="<?= $_SESSION["idregistro"]?>">
 					<div class="form-container">
-						<label for="Nombre">Nombre</label>
-						<p><input class="datos" type="text" id="Nombre" name="Nombre" placeholder="Inserte su nombre" value="<?= $_SESSION["nombre"] ?>" class="form-control"></p>
+						<label for="Nombre">Nombre(s)</label>
+						<p><input class="datos" type="text" onKeyUp="this.value = this.value.toUpperCase();" id="Nombre" name="Nombre" placeholder="Inserte su nombre" value="<?= $_SESSION["nombre"] ?>" class="form-control"></p>
 					</div>
 					<div class="form-container">
 						<label for="Paterno">Apellido Paterno</label>
-						<p><input class="datos" type="text" id="Paterno" name="Paterno" placeholder="Apellido paterno" value="<?= $_SESSION["paterno"] ?>"  class="form-control"></p>
+						<p><input class="datos" type="text" onKeyUp="this.value = this.value.toUpperCase();" id="Paterno" name="Paterno" placeholder="Apellido paterno" value="<?= $_SESSION["paterno"] ?>"  class="form-control"></p>
 					</div>
 					<div class="form-container">
 						<label for="Materno">Apellido Materno</label>
-						<p><input class="datos" type="text" id="Materno" name="Materno" placeholder="Apellido materno " value="<?= $_SESSION["materno"] ?>"  class="form-control"></p>
-					</div>
-					<div class="form-container">
-						<label for="Control">Número de Control</label>
-						<p><input class="datos" type="int" id="Control" name="Control" placeholder="Número de Control" value="<?= $_SESSION["control"] ?>" class="form-control"></p>
+						<p><input class="datos" type="text" onKeyUp="this.value = this.value.toUpperCase();" id="Materno" name="Materno" placeholder="Apellido materno " value="<?= $_SESSION["materno"] ?>"  class="form-control"></p>
 					</div>
 					<div class="form-container">
 						<label for="Sexo">Sexo</label>
@@ -96,15 +92,15 @@ if(!isset($_SESSION["idregistro"])){
 					
 					<div class="form-container">
 						<label for="Direccion">	Dirección</label>
-						<p><input class="datos" type="text" id="Direccion" name="Direccion" placeholder="Calle y Número" value="<?= $_SESSION["direccion"] ?>"  class="form-control"></p>
+						<p><input class="datos" type="text" onKeyUp="this.value = this.value.toUpperCase();" id="Direccion" name="Direccion" placeholder="Calle y Número" value="<?= $_SESSION["direccion"] ?>"  class="form-control"></p>
 					</div>
 					<div class="form-container">
 						<label for="Ciudad">Ciudad</label>
-						<p><input class="datos" type="text" id="Ciudad" name="Ciudad" placeholder="Ciudad o Municipio" value="<?= $_SESSION["ciudad"] ?>"  class="form-control"></p>
+						<p><input class="datos" type="text" onKeyUp="this.value = this.value.toUpperCase();" id="Ciudad" name="Ciudad" placeholder="Ciudad o Municipio" value="<?= $_SESSION["ciudad"] ?>"  class="form-control"></p>
 					</div>
 					<div class="form-container">
 						<label for="Estado">Estado</label>
-						<p><input class="datos" type="text" id="Estado" name="Estado" placeholder="Estado donde resides actualmente" value="<?= $_SESSION["estado"] ?>"  class="form-control"></p>
+						<p><input class="datos" type="text" onKeyUp="this.value = this.value.toUpperCase();" id="Estado" name="Estado" placeholder="Estado donde resides actualmente" value="<?= $_SESSION["estado"] ?>"  class="form-control"></p>
 					</div>
 					<div class="form-container">
 						<label for="Carrera">Selecciona tu carrera</label>
@@ -119,18 +115,14 @@ if(!isset($_SESSION["idregistro"])){
 					</div>
 					<div class="form-container">
 						<label for="Generacion">Generación</label>
-						<p><input class="datos" type="text" id="Generacion" name="Generacion" placeholder="Año de egreso" value="<?= $_SESSION["generacion"] ?>"  class="form-control">
-					</div>
-					<div class="form-container">
-						<label for="Correo">Correo</label>
-						<p><input class="datos" type="mail" id="Correo" name="Correo" placeholder="ejemplo@ejemplo.com"  class="form-control"></p>
+						<p><input class="datos" type="text"  id="Generacion" name="Generacion" placeholder="Año de egreso" value="<?= $_SESSION["generacion"] ?>"  class="form-control">
 					</div>
 					<div class="form-container">
 						<label for="Redes">Compartenos tus redes sociales</label>
 						<p><input class="datos" type="text" id="Redes" name="Redes" placeholder="www.facebook.com/ejemplo.ejemplo" value="<?= $_SESSION["redes"] ?>"  class="form-control"></p>
 					</div>
 					<div class="form-container">
-						<label for="Compartir">¿Deseas Compartir tus datos con compañeros de tu generación?</label>
+						<label for="Compartir"> Selecciona la opción si deseas compartir tus datos con compañeros de tu generación</label>
 						<p><input class="datos" type="checkbox" id="Compartir" name="Compartir" placeholder="Compartir" value="si" <?php echo (($_SESSION["compartir"] == "SI") ? "checked": "")?> class="form-control"></p>
 						<label for="compartir">Compartir</label>
 					</div>
@@ -139,7 +131,7 @@ if(!isset($_SESSION["idregistro"])){
 					</div>
 				</form>
 			</div>
-			<h3>Experiencia laboral</h3>
+			<h3>Experiencia Laboral</h3>
 			<div>
 				<h5>Cuentanos tu Experiencia Laboral</h5>
 		<form id="form-insertar2" action="" class="form">
@@ -192,10 +184,10 @@ if(!isset($_SESSION["idregistro"])){
 			</div>
 			<div class="form-container">
 				<label for="conocimiento">¿En que área de conocimiento te desempeñas?</label>
-				<p><input class="experiencia" type="text" id="conocimiento" name="conocimiento" placeholder="" value="<?= $_SESSION["conocimiento"] ?>" class="form-control"></p>
+				<p><input class="experiencia" type="text" onKeyUp="this.value = this.value.toUpperCase();" id="conocimiento" name="conocimiento" placeholder="" value="<?= $_SESSION["conocimiento"] ?>" class="form-control"></p>
 			<div class="form-container">
 				<label for="cursos">Cuéntanos que cursos has tomado</label>
-				<p><input class="experiencia" type="text" id="cursos" name="cursos" placeholder="Cursos" value="<?= $_SESSION["cursos"] ?>" class="form-control"></p>
+				<p><input class="experiencia" type="text" onKeyUp="this.value = this.value.toUpperCase();" id="cursos" name="cursos" placeholder="Cursos" value="<?= $_SESSION["cursos"] ?>" class="form-control"></p>
 			</div>
 			<div class="form-container">
 				<label for="conferencias">¿Podemos contar contigo para impartir conferencias, simposiums, etc.?</label>
@@ -222,6 +214,7 @@ if(!isset($_SESSION["idregistro"])){
 		
 		<form id="form-insertar4" action="" class="form">
 			<input type="hidden" name="id" value="<?= $_SESSION["idregistro"]?>">
+			<h5>Puedes agregar tantos trabajos como desees</h5>
 			<div class="form-container">
 				<p><input class="empleosAnteriores" name="empresa" placeholder="Nombre de la Empresa"></p>
 			</div>
@@ -250,8 +243,9 @@ if(!isset($_SESSION["idregistro"])){
 						<input class="titulado" type="radio" id="No" name="situacion" value="no" <?php echo (($_SESSION["situacion"] == "no") ? "checked": "") ?> class="form-control">
 					</div>
 			<div class="form-container">
+				<h5>En caso de que no estés titulado cuéntanos el motivo</h5></h5>
 				<label for="motivo">Motivo</label>
-				<input class="titulado" type="text" id="motivo" name="motivo" placeholder="Menciona el motivo por el cual no estas titulado" class="form-control">
+				<input class="titulado" type="text" onKeyUp="this.value = this.value.toUpperCase();" id="motivo" name="motivo" placeholder="Menciona el motivo por el cual no estas titulado" class="form-control">
 			</div>
 			<p></p><a href="http://integrador.itdurango.mx/indexProyectosInv.html"target='_blank'>Informes sobre TITULACIÓN</a></p>
 			<div class="form-container">
@@ -376,14 +370,17 @@ if(!isset($_SESSION["idregistro"])){
           </script>
 	<!-- ################################################################### PIE DE PÁGINA ################################################################### -->
   <div class="footer">
+     <div class="footer">
     <div class="footer_resize">
-      <p class="leftt">EL SISTEMA INTEGRAL ES UN ESFUERZO DE CONOCIMIENTOS PARA LA GENERACIÓN DE UNA APLICACIÓN WEB QUE SIRVA DE SOPORTE PARA LAS FUNCIONES DEL DEPARTAMENTO DE SISTEMAS Y COMPUTACIÓN.<br />
-        <a href="index.html">HOME</a> | <a href="#">DESARROLLADORES DE LA APLICACIÓN</a> | <a href="#">MARCO LEGAL</a></p>
-      <p class="right"><a href="http://www.itdurango.edu.mx/">INSTITUTO TECNOLÓGICO DE DURANGO "LA TÉCNICA AL SERVICIO DE LA PATRIA"</a></p>
+      <p class="leftt"><img src="../images/smile.png" alt="picture" width="90" height="90"/><br/>EL SISTEMA INTEGRAL ES UN ESFUERZO DE CONOCIMIENTOS PARA LA GENERACIÓN DE UNA APLICACIÓN WEB QUE SIRVA DE SOPORTE PARA LAS FUNCIONES DEL DEPARTAMENTO DE SISTEMAS Y COMPUTACIÓN.<br />
+        <a href="index.html">HOME</a> | <a href="desarrolladores.html">DESARROLLADORES DE LA APLICACIÓN</a> | <a href="#">MARCO LEGAL</a></p>
+      <p class="right"><a href="http://www.itdurango.edu.mx/"><img src="../images/ITD.png" alt="picture" width="90" height="90"/><img src="../images/cube.png" alt="picture" width="90" height="90"/><img src="../images/t.png" alt="picture" width="40" height="40"/><img src="../images/f.png" alt="picture" width="40" height="40"/><img src="../images/y.png" alt="picture" width="40" height="40"/>
+      <br/>INSTITUTO TECNOLÓGICO DE DURANGO "LA TÉCNICA AL SERVICIO DE LA PATRIA"</a></p>
       <div class="clr"></div>
     </div>
     <div class="clr"></div>
   </div>
+</div>
 </body>
 </html>
  

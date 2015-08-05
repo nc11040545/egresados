@@ -57,8 +57,8 @@ else
         <h2 ALIGN=center>¿QUÉ ES ESTE SISTEMA? </h2>
 		<h3 ALIGN=center>Es el lugar indicado para tener comunicación 
 		directa con egresados del Departamento de 
-		Sistemas y Computación, creando una 
-		comunidad y medio para tener mas información 
+		Sistemas y Computación del Instituto Tecnológico de Durango, creando una 
+		comunidad y medio para tener más información 
 		acerca de la vida laboral que han tenido los ex-alumnos.</h3>
 		
         </form>

@@ -30,7 +30,7 @@ die("<script>lo-cation.href='index.php';</script>");}
        <br><ul>
           <li><a href="index.php" class="active"><span>Inicio</span></a></li>
           <li><a href="directorio.php" class="active"><span>Directorio de Egresados</span></a></li>
-		  <li><a href="logout.php" class="active"><span>Cerrar Sesión </span></a></li>
+		  <li><a href="index.php" class="active"><span>Cerrar Sesión </span></a></li>
         </ul>
       </div>
      </div>

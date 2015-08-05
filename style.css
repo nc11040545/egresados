@@ -282,40 +282,40 @@ border-top:1px dashed #9E9E9E;
 /* Fuentes */
 @font-face{
 	font-family: NexaB;
-	src: url(fonts/NexaBold.otf);
+	src: url(boot/fonts/NexaBold.otf);
 }
 
 @font-face{
 	font-family: NexaL;
-	src: url(fonts/NexaLight.otf);
+	src: url(boot/fonts/NexaLight.otf);
 }
 
 @font-face{
 	font-family: DeliciousI;
-	src: url(fonts/DeliciousI.otf);
+	src: url(boot/fonts/DeliciousI.otf);
 }
 
 @font-face{
 	font-family: Electra;
-	src: url(fonts/Electra.otf);
+	src: url(boot/fonts/Electra.otf);
 }
 
 @font-face{
 	font-family: DeliciousH;
-	src: url(fonts/DeliciousH.otf);
+	src: url(boot/fonts/DeliciousH.otf);
 }
 
 @font-face{
 	font-family: ExcelsiorB;
-	src: url(fonts/ExcelsiorB.otf);
+	src: url(boot/fonts/ExcelsiorB.otf);
 }
 
 @font-face{
 	font-family: ExcelsiorI;
-	src: url(fonts/ExcelsiorI.otf);
+	src: url(boot/fonts/ExcelsiorI.otf);
 }
 
 @font-face{
 	font-family: Code;
-	src: url(fonts/Code.otf);
+	src: url(boot/fonts/Code.otf);
 }
