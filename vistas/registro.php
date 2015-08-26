@@ -12,13 +12,13 @@
 	<form id="form-insertar" method="post" action="">
            <div class="contacto">
 			   <img src="../images/logo.gif" width="338" aling="left" height="70" border="0" alt="logo">
-               <h1>Sistema para el Seguimiento de Egresados del Departamento de Sistemas y Computación</h1><hr>
+               <h1 ALIGN=center>Sistema para el Seguimiento de Egresados del Departamento de Sistemas y Computación </h1><hr>
                <h2>REGISTRATE</h2>
-			   <label>Nombre:</label>
+			   <label>Nombre de Usuario:</label>
 			   <input type="text" onKeyUp="this.value = this.value.toUpperCase();" name="nombre" ><br>
 			   <label>Contraseña:</label>
 			   <input type="password" name="password" required ><br>
-			   <label>Repite Password:</label>
+			   <label>Repite Contraseña:</label>
 			   <input type="password" name="cpassword" required><br>
 			   <label>Correo:</label>
 			   <input type="email" name="correo" required><br>

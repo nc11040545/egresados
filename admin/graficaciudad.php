@@ -21,12 +21,17 @@
 <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
-      <div class="clr"></div>
-	  <div class="main">
+		<div class="main">
 	  <div class="header_resize">
 	  <div class="header">
-	  <img src="../images/logo.gif" width="338" aling="left" height="70" border="0" alt="logo">
-	   </div>
+	  <div class="logo"><img src="../images/logo.gif" width="338" aling="left" height="70" border="23" alt="logo"></div>
+	         <div class="menu">
+       <br><ul>
+          <li><a href="graficas.php" class="active"><span>Gráficas</span></a></li>
+          <li><a href="index.php" class="active"><span>Cerrar Sesión </span></a></li>
+        </ul>
+      </div>
+     </div>
    <div class="clr"></div>
       <div class="clr"></div>
     </div>
@@ -58,19 +63,28 @@
 	
 <script>
 	$.get("ciudad.php",function(jsonData){
-		 var plot1 = $.jqplot('ciudad',jsonData,
-								{ 
-									seriesDefaults: {
-										renderer: jQuery.jqplot.PieRenderer, 
-										rendererOptions: {
-										showDataLabels: true
-										}
-									}, 
-									legend: { show:true, location: 'e' }
-								}
-								);
-		
-		},"json");
+    var plot1 = $.jqplot('ciudad', jsonData.cant, {
+        seriesDefaults:{
+            renderer:$.jqplot.BarRenderer,
+            rendererOptions: {fillToZero: true}
+        },
+        series:jsonData.series,
+        legend: {
+            show: true,
+            placement: 'outsideGrid'
+        },
+        axes: {
+            xaxis: {
+                renderer: $.jqplot.CategoryAxisRenderer,
+            },
+            yaxis: {
+                pad: 1.05,
+                tickOptions: {formatString: '$%d'}
+            }
+        }
+    });	
+	
+},"json");
 		</script>
 		<?php 
 include("../clases/conexion.class.php");
@@ -102,7 +116,7 @@ if ($q) {
  echo json_encode($datos); 
 } 
 ?> 
-<a href="graficas.php"> <img src= "inicio.png" alt="INICIO" align="right"></a>
+
 		
 </body>
 </html>

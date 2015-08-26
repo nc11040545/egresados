@@ -12,8 +12,9 @@ $datos = array();
 $i=0;
 while ($hob= mysqli_fetch_array($q))
 {
-	$datos[0][$i][0] = $hob["ciudad"]. " ".$hob["sexo"];
-	$datos[0][$i][1] = $hob["total"]/100;
+	
+	$datos["series"][$i]["label"] = $hob["sexo"];
+	$datos["cant"][$i][0] = $hob["total"]*1;
 	$i++;
 }
 echo json_encode($datos);

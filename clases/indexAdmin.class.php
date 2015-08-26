@@ -28,7 +28,7 @@ class indexAdmin{
 	
 	public function validarAdmin(){
 		$conexion = new Conexion();
-		echo $sql = "select count(*) total from index_admin where usuario='$this->usuario' and contrasena='$this->contrasena'";
+	    $sql = "select count(*) total from index_admin where usuario='$this->usuario' and contrasena='$this->contrasena'";
 		$q = mysqli_query($conexion->link, $sql) or die("Error: ".mysqli_error($conexion->link));
 		$r = mysqli_fetch_assoc($q);
 		if ($r["total"] > 0){
@@ -37,7 +37,7 @@ class indexAdmin{
 						$_SESSION["usuario"]="si";
 						
 		}else{
-			echo "---no---";
+			echo "El usuario es incorrecto";
 						
 			}
 	}

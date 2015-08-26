@@ -1,6 +1,6 @@
 <head>
 <meta charset="UTF-8">
-<title>Grafica de Apoyos</title>
+<title>Grafica de Sexo_Ejerciendo</title>
 <style>
 	.grafica{
 		width:1000px;
@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
-	<div class="main">
+		<div class="main">
 	  <div class="header_resize">
 	  <div class="header">
 	  <div class="logo"><img src="../images/logo.gif" width="338" aling="left" height="70" border="23" alt="logo"></div>
@@ -32,17 +32,16 @@
         </ul>
       </div>
      </div>
-      <div class="clr"></div>
-	  </div>
    <div class="clr"></div>
       <div class="clr"></div>
     </div>
   </div>
   <div class="clr"></div>
-    <h1 id="titulo" align="center" >Gráfica de Apoyos en Servicio Social</h1><hr>
+    <h1 id="titulo" align="center" >Gráfica Ejerciendo su Especialidad por Género</h1><hr>
       </div>
     <div class="clr"></div>
   </div>
+
 <script src="../js/jquery.js"></script>
 
 <script src="../src/excanvas.js"></script>
@@ -59,33 +58,40 @@
 <script src="../src/plugins/jqplot.pointLabels.js"></script>
 <script src="../src/plugins/jqplot.canvasTextRenderer.js"></script>
 <script src="../src/plugins/jqplot.canvasAxisLabelRenderer.js"></script>
+<script type="text/javascript" src="../src/plugins/jqplot.barRenderer.min.js"></script>
+<script type="text/javascript" src="../src/plugins/jqplot.categoryAxisRenderer.min.js"></script>
+<script type="text/javascript" src="../src/plugins/jqplot.pointLabels.min.js"></script>
 </head>
 <body>
-<div id="apoyo" class="grafica"></div>	
+<div id="sexo_ejerciendo" class="grafica"></div>	
 	
 <script>
-	$.get("apoyo.php",function(jsonData){
-		 var plot1 = $.jqplot('apoyo',jsonData,
-								{ 
-									seriesDefaults: {
-										renderer: jQuery.jqplot.PieRenderer, 
-										rendererOptions: {
-										showDataLabels: true
-										}
-									}, 
-									legend: { show:true, location: 'e' }
-								}
-								);
-		
-		},"json");
+	$.get("sexo_ejerciendo1.php"),function(jsonData){
+    var plot1 = $.jqplot('sexo_ejerciendo1',jsonData, 
+                          {
+							  title:'Gráfica de Ejerciendo Carrera por Género',
+                              seriesDefaults: {
+                                  renderer:$.jqplot.BarRenderer,
+                                  pointLabels: { show: true, location: 'e', edgeTolerance: -15 },
+                                  shadowAngle: 135,
+                                  rendererOptions: {
+                                  barDirection: 'horizontal'
+            }
+        },
+        axes: {
+            yaxis: {
+                renderer: $.jqplot.CategoryAxisRenderer
+            }
+        }
+    });
+},"json");
 		</script>
 		<?php 
 include("../clases/conexion.class.php");
 $conexion = new Conexion(); 
 
-$sql =('SELECT COUNT( * ) AS total, apoyoServicio
-FROM  `experiencia_laboral` 
-GROUP BY apoyoServicio');
+$sql =('SELECT case(ejerciendo) when "si" then "EN SU ESPECIALIDAD" ELSE "FUERA DE SU ESPECIALIDAD" END AS ejerciendo, case(sexo) when "H" then "HOMBRE" else "MUJER" end as sexo, COUNT( * ) AS total
+FROM  `datos_personales` , experiencia_laboral WHERE datos_personales.id = experiencia_laboral.id GROUP BY sexo, ejerciendo');
 $q = mysqli_query($conexion->link,$sql) or die(mysqli_error($conexion->link)); 
 
 /*
@@ -93,25 +99,26 @@ $datos_personales= array();
 $datos = array();
 $i=0;*/
 if ($q) {
-	 echo "<table border='5' bordercolor='#8A0808' align='center'> 
+	 echo "<table border='5' bordercolor='#8A0808' align='center'>  
     <tr>
-		<td>Apoyo</td>
+		<td>Ejerciendo</td>
+		<td>Sexo</td>
 		<td>Total</td>
     </tr>
     "; 
-     $total=0;
+   $total=0;
     while ($row = mysqli_fetch_array($q)) {
-	echo "<tr><td>".$row ["apoyoServicio"]."</td><td> " .$row ["total"]."</td></tr>";	
+	echo "<tr> <td>".$row ["ejerciendo"]."</td><td> " .$row ["sexo"]."</td><td> "  .$row ["total"]."</td></tr>";	
 	$total+=$row ["total"];
 	}
-	echo "<tr><td>Total</td><td>$total</td></tr>";
+	echo "<tr><td>Total</td><td></td><td>$total</td></tr>";
    echo "</table>"; 
 } 
  else { 
  echo json_encode($datos); 
 } 
 ?> 
-
+ 
 		
 </body>
 </html>

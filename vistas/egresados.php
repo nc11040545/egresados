@@ -32,7 +32,6 @@ if(!isset($_SESSION["idregistro"])){
 	  <div class="logo"><a href="index.php"><img src="../images/logo.gif" width="338" height="70" border="0" alt="logo" /></a></div>
       <div class="menu" id="menu">
        <ul> 
-          <li><a href="index.php" class="active"><span>Inicio</span></a></li>
           <li><a href="directorio.php" class="active"><span>Directorio Egresados</span></a></li>
 		  <li><a href="logout.php" class="active"><span>Cerrar Sesión </span></a></li>
         </ul>
@@ -44,7 +43,7 @@ if(!isset($_SESSION["idregistro"])){
   <div class="clr"></div>
   <div class="header_blog2">
     <div class="header">
-      <h2 id="tituloSistema" align="center">BIENVENIDO</h2>
+      <h2 id="titulos" align="center">BIENVENIDO</h2>
       <center><p>Ing. en Sistemas Computacionales <br>Aníbal Roberto Saucedo Rosales <br />
          <strong>RESPONSABLE</strong></p></center>
          <p>&nbsp;</p>
@@ -83,16 +82,16 @@ if(!isset($_SESSION["idregistro"])){
 					</div>
 					<div class="form-container">
 						<label for="Telefono">Teléfono</label>
-						<p><input class="datos" type="tel" id="Telefono" name="Telefono" placeholder="Teléfono hogar" value="<?= $_SESSION["telefono"] ?>"  class="form-control"></p>
+						<p><input class="datos" type="tel" id="Telefono" name="Telefono" placeholder="xxx-xxx-xxxx" value="<?= $_SESSION["telefono"] ?>"  class="form-control"></p>
 					</div>
 					<div class="form-container">
-						<label for="Celular">Teléfono celular</label>
-						<p><input class="datos" type="tel" id="Celular" name="Celular" placeholder="Celular" value="<?= $_SESSION["celular"] ?>"  class="form-control"></p>
+						<label for="Celular">Teléfono Celular</label>
+						<p><input class="datos" type="tel" id="Celular" name="Celular" placeholder="xxx-xxx-xxxx" value="<?= $_SESSION["celular"] ?>"  class="form-control"></p>
 					</div>
 					
 					<div class="form-container">
 						<label for="Direccion">	Dirección</label>
-						<p><input class="datos" type="text" onKeyUp="this.value = this.value.toUpperCase();" id="Direccion" name="Direccion" placeholder="Calle y Número" value="<?= $_SESSION["direccion"] ?>"  class="form-control"></p>
+						<p><input class="datos" type="text" size="40" onKeyUp="this.value = this.value.toUpperCase();" id="Direccion" name="Direccion" placeholder="Calle,Colonia y Número" value="<?= $_SESSION["direccion"] ?>"  class="form-control"></p>
 					</div>
 					<div class="form-container">
 						<label for="Ciudad">Ciudad</label>
@@ -150,11 +149,15 @@ if(!isset($_SESSION["idregistro"])){
 				
 			</div>
 			<div class="form-container">
-						<br><label for="situacion">¿Actualmente estas trabajando?:</label>
+						<br><label for="situacion">¿Actualmente estas trabajando?</label>
 						<br><label for="Si">Si</label>
 						<input class="experiencia" type="radio" id="Si" name="trabajando" value="si" <?php echo (($_SESSION["trabajando"] == "si") ? "checked": "")?> class="form-control">
 						<br><label for="No">No</label>
 						<input class="experiecia" type="radio" id="No" name="trabajando" value="no" <?php echo (($_SESSION["trabajando"] == "no") ? "checked": "")?> class="form-control">
+					</div>
+					<div class="form-container">
+						<label for="trabajo">¿Dónde Trabajas Actualmente?</label>
+						<p><input class="experiencia" type="text" onKeyUp="this.value = this.value.toUpperCase();" id="trabajo" name="trabajo" placeholder="Trabajo Actual" value="<?= $_SESSION["trabajo"] ?>" class="form-control"></p>
 					</div>
 					<div class="form-container">
 				<label for="ejerciendo">¿Estás ejerciendo tu carrera?</label>
@@ -186,23 +189,23 @@ if(!isset($_SESSION["idregistro"])){
 				<label for="conocimiento">¿En que área de conocimiento te desempeñas?</label>
 				<p><input class="experiencia" type="text" onKeyUp="this.value = this.value.toUpperCase();" id="conocimiento" name="conocimiento" placeholder="" value="<?= $_SESSION["conocimiento"] ?>" class="form-control"></p>
 			<div class="form-container">
-				<label for="cursos">Cuéntanos que cursos has tomado</label>
+				<label for="cursos">Cuéntanos algunos cursos que  hayas tomado</label>
 				<p><input class="experiencia" type="text" onKeyUp="this.value = this.value.toUpperCase();" id="cursos" name="cursos" placeholder="Cursos" value="<?= $_SESSION["cursos"] ?>" class="form-control"></p>
 			</div>
 			<div class="form-container">
-				<label for="conferencias">¿Podemos contar contigo para impartir conferencias, simposiums, etc.?</label>
+				<label for="conferencias">¿Podemos contar contigo para impartir conferencias, simposiums.?</label>
 				        <br><label for="Si">Si</label>
 						<input class="experiencia" type="radio" id="Si" name="conferencias" value="si" <?php echo (($_SESSION["conferencias"] == "si") ? "checked": "")?> class="form-control">
 						<br><label for="No">No</label>
 						<input class="experencia" type="radio" id="No" name="conferencias" value="no" <?php echo (($_SESSION["conferencias"] == "no") ? "checked": "")?> class="form-control">
 			</div>
 			<div class="form-container">
-						<label for="apoyo">¿Con cuál de estas opciones nos puedes apoyar? </label>
+						<label for="apoyo">¿Con cuál de estas opciones  puedes apoyar a alumnos próximos a egresar? </label>
 						<br><label for="servicio">Servicio Social</label>
 					    <br><input class="experiencia" type="checkbox" id="servicio" name="apoyoServicio" value="servicio" <?php echo (($_SESSION["apoyoServicio"] == "SI") ? "checked": "")?> class="form-control">
 						<br><label for="residentes">Residentes</label>
 						<br><input class="experiencia" type="checkbox" id="residentes" name="apoyoResidentes" value="residentes" <?php echo (($_SESSION["apoyoResidentes"] == "SI") ? "checked": "")?> class="form-control">
-						<br></be><label for="bolsa">Bolsa de Trabajo</label>
+						<br></be><label for="bolsa">Oportunidad de Empleo</label>
 						<br><input class="experiencia" type="checkbox" id="bolsa" name="apoyoBolsa" value="bolsa" <?php echo (($_SESSION["apoyoBolsa"] == "SI") ? "checked": "")?> class="form-control">
 					</div>
 				<input class="boton" type="submit" id="GuardarInformacion2" value="Guardar información" class="form-control btn btn-primary">
@@ -216,13 +219,13 @@ if(!isset($_SESSION["idregistro"])){
 			<input type="hidden" name="id" value="<?= $_SESSION["idregistro"]?>">
 			<h5>Puedes agregar tantos trabajos como desees</h5>
 			<div class="form-container">
-				<p><input class="empleosAnteriores" name="empresa" placeholder="Nombre de la Empresa"></p>
+				<p><input class="empleosAnteriores" size="40" name="empresa" placeholder="Nombre de la Empresa"></p>
 			</div>
 			<div class="form-container">
-				<p><input class="empleosAnteriores" name="puesto" placeholder="Puesto que Desempeñó"></p>
+				<p><input class="empleosAnteriores" size="40" name="puesto" placeholder="Puesto que Desempeñó"></p>
 			</div>
 			<div class="form-container">
-				<p><input class="empleosAnteriores" name="anios_laborando" placeholder="Tiempo que prestó sus servicios"></p>
+				<p><input class="empleosAnteriores" size="40" name="anios_laborando" placeholder="Tiempo que prestó sus servicios"></p>
 			</div>
 			<div class="form-container">
 				<input class="boton" type="submit" id="GuardarInformacion4" value="Guardar información" class="form-control btn btn-primary">
@@ -245,12 +248,14 @@ if(!isset($_SESSION["idregistro"])){
 			<div class="form-container">
 				<h5>En caso de que no estés titulado cuéntanos el motivo</h5></h5>
 				<label for="motivo">Motivo</label>
-				<input class="titulado" type="text" onKeyUp="this.value = this.value.toUpperCase();" id="motivo" name="motivo" placeholder="Menciona el motivo por el cual no estas titulado" class="form-control">
+				<input class="titulado" type="text" size="40" onKeyUp="this.value = this.value.toUpperCase();" id="motivo" name="motivo" placeholder="Menciona el motivo por el cual no estas titulado" class="form-control">
 			</div>
 			<p></p><a href="http://integrador.itdurango.mx/indexProyectosInv.html"target='_blank'>Informes sobre TITULACIÓN</a></p>
 			<div class="form-container">
 				<input class="boton" type="submit" id="GuardarInformacion3" value="Guardar información" class="form-control btn btn-primary">
 			</div>
+			<h5>¡Gracias por prestarnos un poco de tu tiempo en la realización de este cuestionario!.
+			<br>Tus datos son altamente confidenciales.</h5>
 		</form>
 			</div> <!-- experiencia -->
 		</div>
@@ -301,6 +306,12 @@ if(!isset($_SESSION["idregistro"])){
 			heightStyle:"fill",
 			icons:icons
 			});
+			$("#accordion").accordion({
+                header: "h3",
+                autoHeight: false,
+                icons: icons,
+                active: false,
+                navigation: true });
 /*		$("#container").resizable({
 			minWidth:200,
 			minHeight:140,
@@ -343,7 +354,7 @@ if(!isset($_SESSION["idregistro"])){
 			$.post("../modelos/Experiencia_Laboral/insertar.php", 
 				$("#form-insertar2").serialize(), function(respuesta){
 					alert(respuesta);
-					if (respuesta.indexOf("Experiencia laboral gurdada correctamente") > 0){}
+					if (respuesta.indexOf("Experiencia laboral guardada correctamente") > 0){}
 					
 				});
 		});
@@ -353,6 +364,7 @@ if(!isset($_SESSION["idregistro"])){
 			$.post("../modelos/empleos_anteriores/insertar.php", 
 				$("#form-insertar4").serialize(), function(respuesta){
 					alert(respuesta);
+					lista();
 					if (respuesta.indexOf("Empleos anteriores guardados correctamente") > 0){}
 					
 				});

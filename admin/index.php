@@ -36,7 +36,7 @@ else
 	  <div class="clr"></div>
 	  <div class="header_blog2">
       <div class="header">
-    <h1 id="titulo" align="left" >Sistema para el Seguimiento de Egresados del Departamento de Sistemas y Computación</h1><hr>
+    <h1 id="titulo" align="center" >Sistema para el Seguimiento de Egresados del Departamento de Sistemas y Computación</h1><hr>
       </div>
     <div class="clr"></div>
   </div>

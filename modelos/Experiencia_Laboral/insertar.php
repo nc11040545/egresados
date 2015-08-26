@@ -5,15 +5,16 @@
 	$_POST["apoyoResidentes"] = (isset($_POST["apoyoResidentes"])) ? "SI" : "NO";
 	$_POST["apoyoBolsa"] = (isset($_POST["apoyoBolsa"])) ? "SI" : "NO";
 	$modificar= $Experiencia_Laboral->altaExperiencia_Laboral($_POST["id"], $_POST["tiempo"], $_POST["trabajando"], 
-	$_POST["ejerciendo"], $_POST["formal"], $_POST["negocio"],$_POST["telOficina"], 
+	$_POST["ejerciendo"], $_POST["trabajo"], $_POST["formal"], $_POST["negocio"],$_POST["telOficina"], 
 	$_POST["conocimiento"], $_POST["cursos"], $_POST["conferencias"], $_POST["apoyoServicio"], $_POST["apoyoResidentes"], $_POST["apoyoBolsa"]);
 	if(strpos($modificar,"no")>0){
-		echo "asdjkasj";
+	
 		$Experiencia_Laboral = new Experiencia_Laboral();
 		$Experiencia_Laboral->setid($_POST["id"]);
 		$Experiencia_Laboral->settiempo($_POST["tiempo"]);
 		$Experiencia_Laboral->settrabajando($_POST["trabajando"]);
 		$Experiencia_Laboral->setejerciendo($_POST["ejerciendo"]);
+		$Experiencia_Laboral->settrabajo($_POST["trabajo"]);
 		$Experiencia_Laboral->setformal($_POST["formal"]);
 		$Experiencia_Laboral->setnegocios($_POST["negocio"]);
 		$Experiencia_Laboral->settelOficina($_POST["telOficina"]);

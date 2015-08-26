@@ -11,20 +11,24 @@
 <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
+<div class="main">
+  <div class="header_resize">
+    <div class="header">
+	  <div class="logo"><a href="index.php"><img src="../images/logo.gif" width="338" height="70" border="0" alt="logo" /></a></div>
+      <div class="menu" id="menu">
+       <ul> 
+          <li><a href="egresados.php" class="active"><span>Inicio</span></a></li>
+		  <li><a href="logout.php" class="active"><span>Cerrar Sesión </span></a></li>
+        </ul>
+      </div>
+ </div>
       <div class="clr"></div>
-	  <div class="main">
-	  <div class="header_resize">
-	  <div class="header">
-	  <img src="../images/logo.gif" width="338" aling="left" height="70" border="0" alt="logo">
-	   </div>
-   <div class="clr"></div>
       <div class="clr"></div>
-    </div>
   </div>
   <div class="clr"></div>
   <div class="header_blog2">
     <div class="header">
-    <h1 id="tituloDirectorio" align="left" >Directorio</h1><hr>
+    <h1 id="titulos" align="left" >Directorio</h1><hr>
       </div>
     <div class="clr"></div>
   </div>
@@ -32,10 +36,10 @@
 include("../clases/conexion.class.php");
 $conexion = new Conexion(); 
 session_start();
- $sql =('SELECT COUNT( * ) AS total, Nombre, Paterno, Materno, Generacion, Redes, Celular
+  $sql =('SELECT COUNT( * ) AS total, Nombre, Paterno, Materno, Generacion, Redes, Celular, Compartir 
 FROM  `datos_personales` WHERE Generacion ="'.$_SESSION["generacion"].'"'); 
 $q = mysqli_query($conexion->link,$sql) or die(mysqli_error($conexion->link)); 
-$r= mysqli_fetch_assoc($q);
+//$r= mysqli_fetch_assoc($q);
 
 /*
 $datos_personales= array();
@@ -55,7 +59,7 @@ if ($q) {
     "; 
    
     while ($row = mysqli_fetch_array($q)) {
-		if ($row["compartir"] == "si"){
+		if ($row["Compartir"] == "SI"){
 	echo "<tr> <td>".$row ["Nombre"]."</td><td> " .$row ["Paterno"]."</td><td> " .$row ["Materno"]."</td><td> " .$row ["Generacion"]."</td><td> " .$row ["Redes"]."</td><td> " .$row ["Celular"]."</td>";	
 }
    }
@@ -65,7 +69,7 @@ if ($q) {
  echo json_encode($datos); 
 } 
 ?> 
-<a href="index.php"> <img src= "inicio.png" alt="INICIO" align="right"></a> 
+ 
 		
 </body>
 </html>

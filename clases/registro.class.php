@@ -116,6 +116,7 @@ class registro{
 						$_SESSION ["tiempo"]="";
 						$_SESSION ["trabajando"]="";
 						$_SESSION ["ejerciendo"]="";
+						$_SESSION ["trabajo"]="";
 						$_SESSION ["formal"]="";
 						$_SESSION ["negocio"]="";
 						$_SESSION ["teloficina"]="";
@@ -129,6 +130,7 @@ class registro{
 								$_SESSION["tiempo"] = $r2["tiempo"];
 								$_SESSION["trabajando"] = $r2["trabajando"];
 								$_SESSION["ejerciendo"] = $r2["ejerciendo"];
+								$_SESSION["trabajo"] = $r2["trabajo"];
 								$_SESSION["formal"] = $r2["formal"];
 								$_SESSION["negocio"] = $r2["negocio"];
 								$_SESSION["teloficina"] = $r2["telOficina"];
@@ -150,7 +152,7 @@ class registro{
 								$_SESSION["situacion"] = $r3["situacion"];
 								$_SESSION["motivo"] = $r3["motivo"];
 							}
-						} else{echo"no";}
+						} else{echo"El usuario no está registrado";}
 	}
 }
 

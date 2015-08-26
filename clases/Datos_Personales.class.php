@@ -49,15 +49,29 @@ class Datos_Personales{
 	public function setstatus($status){$this->status = $status;}
 
 public function altaDatos_Personales($id, $Nombre, $Paterno, $Materno, $Sexo, $Telefono, $Celular,  $Direccion, $Ciudad, $Estado, $Carrera, $Generacion, $Redes, $Compartir){
-		$conexion = new Conexion();
-		$sql = "insert ignore into datos_personales(id, Nombre, Paterno,  Materno, Sexo, Telefono, Celular, Direccion, Ciudad, Estado, Carrera, Generacion, Redes, Compartir)
-		values('$id','$Nombre', '$Paterno', '$Materno', '$Sexo', '$Telefono',' $Celular',  '$Direccion', '$Ciudad', '$Estado', '$Carrera', 'Generacion', '$Redes','$Compartir')";
+	$conexion = new Conexion();
+	$Nombre = mysqli_real_escape_string ($conexion->link,$Nombre);
+	$Paterno = mysqli_real_escape_string ($conexion->link,$Paterno);
+	$Materno = mysqli_real_escape_string ($conexion->link,$Materno);
+	$Sexo = mysqli_real_escape_string ($conexion->link,$Sexo);
+	$Telefono = mysqli_real_escape_string ($conexion->link,$Telefono);
+	$Celular = mysqli_real_escape_string ($conexion->link,$Celular);
+	$Direccion = mysqli_real_escape_string ($conexion->link,$Direccion);
+	$Ciudad = mysqli_real_escape_string ($conexion->link,$Ciudad);
+	$Estado = mysqli_real_escape_string ($conexion->link,$Estado);
+	$Carrera = mysqli_real_escape_string ($conexion->link,$Carrera);
+	$Generacion = mysqli_real_escape_string ($conexion->link,$Generacion);
+	$Redes = mysqli_real_escape_string ($conexion->link,$Redes);
+	$Compartir = mysqli_real_escape_string ($conexion->link,$Compartir);
+		
+	    $sql = "insert ignore into datos_personales(id, Nombre, Paterno,  Materno, Sexo, Telefono, Celular, Direccion, Ciudad, Estado, Carrera, Generacion, Redes, Compartir)
+		values('$id','$Nombre', '$Paterno', '$Materno', '$Sexo', '$Telefono',' $Celular',  '$Direccion', '$Ciudad', '$Estado', '$Carrera', '$Generacion', '$Redes','$Compartir')";
 		$r = mysqli_query($conexion->link, $sql) or die(" Error ".mysqli_error($conexion->link));
 		
 		if (mysqli_affected_rows($conexion->link) == 1)
-			return " si ";
+			echo"Datos agregados correctamente ";
 		else
-			return " no ";
+			return "Los datos no se agregaron correctamente ";
 	}
 	public function bajaDatos($id){
 		$conexion = new Conexion();
@@ -66,7 +80,21 @@ public function altaDatos_Personales($id, $Nombre, $Paterno, $Materno, $Sexo, $T
 		echo "Datos borrados correctamente";
 	}
 	public function actualizaDatos_Personales(){
-		$conexion = new Conexion();
+	$conexion = new Conexion();
+	$this->Nombre = mysqli_real_escape_string ($conexion->link,$this->Nombre);
+	$this->Paterno = mysqli_real_escape_string ($conexion->link,$this->Paterno);
+	$this->Materno = mysqli_real_escape_string ($conexion->link,$this->Materno);
+	$this->Sexo = mysqli_real_escape_string ($conexion->link,$this->Sexo);
+	$this->Telefono = mysqli_real_escape_string ($conexion->link,$this->Telefono);
+	$this->Celular = mysqli_real_escape_string ($conexion->link,$this->Celular);
+	$this->Direccion = mysqli_real_escape_string ($conexion->link,$this->Direccion);
+	$this->Ciudad = mysqli_real_escape_string ($conexion->link,$this->Ciudad);
+	$this->Estado = mysqli_real_escape_string ($conexion->link,$this->Estado);
+	$this->Carrera = mysqli_real_escape_string($conexion->link,$this->Carrera);
+	$this->Generacion = mysqli_real_escape_string ($conexion->link,$this->Generacion);
+	$this->Redes = mysqli_real_escape_string ($conexion->link,$this->Redes);
+	$this->Compartir = mysqli_real_escape_string ($conexion->link,$this->Compartir);
+		
 		$sql = "update datos_Personales set Nombre='$this->Nombre', Paterno='$this->Paterno', Materno='$this->Materno', Sexo='$this->Sexo', Telefono='$this->Telefono',
 		Celular='$this->Celular', Direccion='$this->Direccion', Ciudad='$this->Ciudad', Estado='$this->Estado', Carrera='$this->Carrera' , Generacion='$this->Generacion', 
 		Redes='$this->Redes', Compartir='$this->Compartir' where id=$this->id";
@@ -80,10 +108,25 @@ public function altaDatos_Personales($id, $Nombre, $Paterno, $Materno, $Sexo, $T
 		while ($reg = mysqli_fetch_assoc($query)){ $regs[] = $reg;}		
 		echo json_encode($regs);
 	}
-	public static function buscaDatos($nombre){
+	public static function buscaDatos($nombre, $servicio="%%", $residencia="%%", $bolsa="%%"){
 		$conexion = new Conexion();
-		$sql = "select *, id as id, Nombre as label from Datos_Personales where Nombre like '%$Nombre%'";
+		$ands = " 0 ";
+		if ($servicio == "SI")
+		{
+			$ands .= " or apoyoServicio ='SI' ";
+			}
+		if ($residencia == 'SI'){
+			$ands .= "  or apoyoResidentes = 'SI' ";
+			}
+		if ($bolsa == 'SI'){
+			$ands .= " or apoyoBolsa = 'SI' ";
+			}
+		
+		$sql = "select *, experiencia_laboral.id as id, Nombre as label from 
+				Datos_Personales, (select * from experiencia_laboral where $ands) experiencia_laboral where experiencia_laboral.id = Datos_Personales.id and Nombre like '%$nombre%' 
+				"; 
 		$query = mysqli_query($conexion->link, $sql) or die("Error: ".mysqli_error($conexion->link));
+		$regs=Array();
 		while ($reg = mysqli_fetch_assoc($query)){ $regs[] = $reg;}		
 		echo json_encode($regs);
 	}

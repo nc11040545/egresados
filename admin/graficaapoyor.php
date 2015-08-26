@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
-	<div class="main">
+		<div class="main">
 	  <div class="header_resize">
 	  <div class="header">
 	  <div class="logo"><img src="../images/logo.gif" width="338" aling="left" height="70" border="23" alt="logo"></div>
@@ -33,13 +33,10 @@
       </div>
      </div>
       <div class="clr"></div>
-	  </div>
-   <div class="clr"></div>
-      <div class="clr"></div>
     </div>
   </div>
   <div class="clr"></div>
-    <h1 id="titulo" align="center" >Gráfica de Apoyos en Servicio Social</h1><hr>
+    <h1 id="titulo" align="center" >Gráfica de Apoyos en Residencia</h1><hr>
       </div>
     <div class="clr"></div>
   </div>
@@ -61,11 +58,11 @@
 <script src="../src/plugins/jqplot.canvasAxisLabelRenderer.js"></script>
 </head>
 <body>
-<div id="apoyo" class="grafica"></div>	
+<div id="apoyor" class="grafica"></div>	
 	
 <script>
-	$.get("apoyo.php",function(jsonData){
-		 var plot1 = $.jqplot('apoyo',jsonData,
+	$.get("apoyor.php",function(jsonData){
+		 var plot1 = $.jqplot('apoyor',jsonData,
 								{ 
 									seriesDefaults: {
 										renderer: jQuery.jqplot.PieRenderer, 
@@ -83,9 +80,9 @@
 include("../clases/conexion.class.php");
 $conexion = new Conexion(); 
 
-$sql =('SELECT COUNT( * ) AS total, apoyoServicio
+$sql =('SELECT COUNT( * ) AS total, apoyoResidentes
 FROM  `experiencia_laboral` 
-GROUP BY apoyoServicio');
+GROUP BY apoyoResidentes');
 $q = mysqli_query($conexion->link,$sql) or die(mysqli_error($conexion->link)); 
 
 /*
@@ -101,7 +98,7 @@ if ($q) {
     "; 
      $total=0;
     while ($row = mysqli_fetch_array($q)) {
-	echo "<tr><td>".$row ["apoyoServicio"]."</td><td> " .$row ["total"]."</td></tr>";	
+	echo "<tr><td>".$row ["apoyoResidentes"]."</td><td> " .$row ["total"]."</td></tr>";	
 	$total+=$row ["total"];
 	}
 	echo "<tr><td>Total</td><td>$total</td></tr>";

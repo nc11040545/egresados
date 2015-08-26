@@ -16,7 +16,13 @@ class empleos_anteriores{
     public function setanios_laborando($anios_laborando){$this->anios_laborando = $anios_laborando;}
     
 	public function altaempleos_anteriores($id, $empresa, $puesto, $anios_laborando){
-		$conexion = new Conexion();
+	$conexion = new Conexion();
+	$empresa = mysqli_real_escape_string ($conexion->link,$empresa);
+	$puesto = mysqli_real_escape_string ($conexion->link,$puesto);
+	$anios_laborando = mysqli_real_escape_string ($conexion->link,$anios_laborando);
+	
+	
+		
 		$sql = "insert into empleos_anteriores(id_usuario, empresa, puesto, anios_laborando)values('$id','$empresa','$puesto','$anios_laborando')";
 		mysqli_query($conexion->link, $sql) or die("Error: ".mysqli_error($conexion->link));
 		echo "Empleo insertado correctamente";

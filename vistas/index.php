@@ -35,27 +35,28 @@ else
   <div class="clr"></div>
   <div class="header_blog2">
     <div class="header">
-    <h1 id="titulo" align="left" >Sistema para el Seguimiento de Egresados del Departamento de Sistemas y Computación</h1><hr>
+    <h1 id="titulo" align="center" >Sistema para el Seguimiento de Egresados del Departamento de Sistemas y Computación</h1><hr>
       </div>
     <div class="clr"></div>
   </div>
     
     <h2>INICIO DE SESIÓN</h2>
-    <div id="formulario" class="contacto">
+    <div id="contacto" class="contacto">
 		
         <form id="form-validar" method="POST" action="return false" onsubmit="return false">
             <div id="resultado"></div>
             <p><input type="text" onKeyUp="this.value = this.value.toUpperCase();"  name="user" id="user" value="" placeholder="USUARIO"></p>
             <p><input type="password" name="pass" id="pass" value="" placeholder="*******"></p>
             <p></p><input type="submit" value="Entrar" class='boton'  id="btnentrar"/></p>
+            <h4>Si no tienes una cuenta   <a href="registro.php">REGISTRATE</a></h4>
             
-            <a href="registro.php">REGISTRATE</a>
-            <a href="recuperar_contrasena.php">¿Olvidaste tu cuenta?</a><br>
+          
+            <br><a href="recuperar_contrasena.php">¿Olvidaste tu cuenta?</a><br>
             
             
             
-        <h2 ALIGN=center>¿QUÉ ES ESTE SISTEMA? </h2>
-		<h3 ALIGN=center>Es el lugar indicado para tener comunicación 
+        <h2 id="titulo"  ALIGN=center>¿QUÉ ES ESTE SISTEMA? </h2>
+		<h3 id="titulo"  ALIGN=center>Es el lugar indicado para tener comunicación 
 		directa con egresados del Departamento de 
 		Sistemas y Computación del Instituto Tecnológico de Durango, creando una 
 		comunidad y medio para tener más información 

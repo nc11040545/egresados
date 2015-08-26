@@ -20,7 +20,7 @@ html { padding:0; margin:0;}
 .menu ul { text-align: right;  padding:0; margin:0; list-style:none; border:0; float:right;}
 .menu ul li { float:left; margin:0; padding:0 10px; border:0;}
 																  /* Cambio de fuente */
-.menu ul li a { float:left; margin:0; padding:12px 0; color:#fffefe; font-family: NexaL; font-size:70%;text-decoration:none; text-transform:uppercase;}
+.menu ul li a { float:left; margin:0; padding:10px 0; color:#fffefe; font-family: Helvetica; font-size:50%;text-decoration:none; text-transform:uppercase;}
 .menu ul li a span { padding:12px 9px; background:none;}
 .menu ul li a:hover {  background: url(images/r_menu.gif) no-repeat right;}
 .menu ul li a:hover span {   background:url(images/l_menu.gif) no-repeat left;}
@@ -98,31 +98,31 @@ div#slideshow { float: left; width: 100%; height: 341px; }
 		display:inline-block;
 	}
 #titulo{
-	font-family: NexaB;
+	font-family: Helvetica;
 	font-size:180%; 
 }
-#tituloDirectorio{
+#titulos{
 	font-family: Helvetica;
 	font-size:180%;
 } 
 #tituloSistema{
-	font-family: NexaB;
+	font-family: Helvetica;
 	font-size:140%; 
 }
 #tituloResidencia{
-	font-family: NexaB;
+	font-family: Helvetica;
 	font-size:150%; 
 }
 #sesion{
-	font-family: NexaB;
+	font-family: Helvetica;
 	font-size:150%; 
 }
 #sesion2{
-	font-family: NexaB;
+	font-family: Helvetica;
 	font-size:150%; 
 }
 #tablas {font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-    font-size: 12px;    margin: 45px;     width: 480px; text-align: left;    border-collapse: collapse; }
+    font-size: 12px;    margin: 45px;     width: 400px; text-align: left;    border-collapse: collapse; }
 th {     font-size: 13px;     font-weight: normal;     padding: 8px;     background: #b9c9fe;
     border-top: 4px solid #aabcfe;    border-bottom: 1px solid #fff; color: #039; }
 td {    padding: 8px;     background: #e8edff;     border-bottom: 1px solid #fff;
@@ -136,6 +136,7 @@ font-family: Code;
 			width:100%;
 			height:635px;
 			}
+			
 			
 /*Cambiar las propiedades del contenido: background, font-size, font-family ...*/
 .ui-accordion .ui-accordion-content
@@ -170,7 +171,7 @@ font-style: oblique;
  }
 /* Estilo para el formulario de iniciar sesi?n */
 .contacto{
-	font-family: NexaL;
+	font-family: Helvetica;
 }
 .contacto label{
 	display: block; 

@@ -4,6 +4,7 @@
 	$experiencia_laboral->settiempo($_POST["tiempo"]);
 	$experiencia_laboral->settrabajando($_POST["trabajando"]);
 	$experiencia_laboral->setejerciendo($_POST["ejerciendo"]);
+	$experiencia_laboral->settrabajo($_POST["trabajo"]);
 	$experiencia_laboral->setformal($_POST["formal"]);
 	$experiencia_laboral->setnegocio($_POST["negocio"]);
 	$experiencia_laboral->settelOficina($_POST["telOficina"]);
